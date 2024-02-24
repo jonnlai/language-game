@@ -1,1 +1,1 @@
-# language-game
+# Language Game

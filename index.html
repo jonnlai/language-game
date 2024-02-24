@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <h1>Boost your vocabulary</h1>
+    <main>
+      <form id="selection-area" action="">
+        <div id="select-mode">
+          <label for="mode">Select the game mode:</label>
+          <select name="mode" id="mode">
+            <option value="eng-to-fin">English to Finnish</option>
+            <option value="fin-to-eng">Finnish to English</option>
+          </select>
+        </div>
+        <br />
+        <div id="select-theme">
+          <label for="theme">Select the theme:</label>
+          <select name="theme" id="theme">
+            <option value="animals">Animals</option>
+            <option value="weather">Weather</option>
+          </select>
+        </div>
+      </form>
+      <div id="info-area"></div>
+      <div id="play-area">
+        <div id="answers-area"></div>
+        <div id="options-area"></div>
+        <div id="buttons">
+          <button>Submit</button>
+        </div>
+      </div>
+    </main>
+    <script scr="assets/js/script.js"></script>
+  </body>
+</html>
