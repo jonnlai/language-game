@@ -18,7 +18,7 @@ select {
 }
 
 #play-area {
-  max-width: 500px;
+  max-width: 320px;
   margin: 0 auto;
   display: flex;
 }
@@ -35,6 +35,14 @@ select {
   border: 1px solid black;
   border-radius: 2px;
   margin: 5px;
+  flex-grow: 0;
+}
+
+/* W3School was consulted to learn how to create a vertical line: https://www.w3schools.com/howto/howto_css_vertical_line.asp*/
+/*Vertical line to separate the options area from the answers area */
+.vl {
+  border-left: 2px dotted black;
+  height: 236px;
 }
 
 #options-area {
@@ -42,13 +50,14 @@ select {
   grid-template-columns: 90px;
   grid-template-rows: repeat(6, auto);
   padding: 30px 0;
+  flex-grow: 1;
 }
 
 #options-area > div {
   background-color: wheat;
   border: 1px solid black;
   border-radius: 2px;
-  margin: 5px;
+  margin: 5px 0 5px 10px;
 }
 
 button {
