@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+  margin-top: 10vh;
+}
+
+form {
+  margin: 50px;
+}
+
+select {
+  padding: 5px;
+}
+
+button {
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
