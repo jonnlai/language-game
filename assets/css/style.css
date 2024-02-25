@@ -10,11 +10,30 @@ body {
 }
 
 form {
-  margin: 50px;
+  margin: 30px 10px;
 }
 
 select {
   padding: 5px;
+}
+
+#play-area {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* W3Schools and MDN Wed docs were consulted on how to create a grid and how to use grid templates: https://www.w3schools.com/css/css_grid_container.asp and https://developer.mozilla.org/en-US/docs/Web/CSS/grid*/
+#answers-area {
+  display: grid;
+  grid-template-columns: 90px 90px 40px;
+  grid-template-rows: repeat(8, auto);
+}
+
+#answers-area > div {
+  background-color: aqua;
+  border: 1px solid black;
+  border-radius: 2px;
+  margin: 5px;
 }
 
 button {
