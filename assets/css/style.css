@@ -20,6 +20,7 @@ select {
 #play-area {
   max-width: 500px;
   margin: 0 auto;
+  display: flex;
 }
 
 /* W3Schools and MDN Wed docs were consulted on how to create a grid and how to use grid templates: https://www.w3schools.com/css/css_grid_container.asp and https://developer.mozilla.org/en-US/docs/Web/CSS/grid*/
@@ -31,6 +32,20 @@ select {
 
 #answers-area > div {
   background-color: aqua;
+  border: 1px solid black;
+  border-radius: 2px;
+  margin: 5px;
+}
+
+#options-area {
+  display: grid;
+  grid-template-columns: 90px;
+  grid-template-rows: repeat(6, auto);
+  padding: 30px 0;
+}
+
+#options-area > div {
+  background-color: wheat;
   border: 1px solid black;
   border-radius: 2px;
   margin: 5px;

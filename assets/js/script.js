@@ -13,4 +13,12 @@ window.onload = function () {
       answersArea.append(square);
     }
   }
+  let optionsArea = document.getElementById("options-area");
+  let optionRows = 6;
+  for (let optionRow = 0; optionRow < optionRows; optionRow++) {
+    let option = document.createElement("div");
+    option.id = "option " + optionRow.toString();
+    option.textContent = option.id;
+    optionsArea.append(option);
+  }
 };
