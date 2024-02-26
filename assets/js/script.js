@@ -10,7 +10,10 @@ const animals = {
   sheep: ["sheep", "lammas", "oveja"],
 };
 
-//How to use a for loop to create a grid when the window loads was taken from: https://github.com/ImKennyYip/slide-puzzle/blob/master/puzzle.js
+/**
+ * Create a grid for the game when the window has finished loading
+ * How to use a for loop to create a grid when the window loads was taken from: https://github.com/ImKennyYip/slide-puzzle/blob/master/puzzle.js
+ */
 window.onload = function () {
   let answersArea = document.getElementById("answers-area");
   let answerColumns = 3;
@@ -28,7 +31,7 @@ window.onload = function () {
   let optionRows = 6;
   for (let optionRow = 0; optionRow < optionRows; optionRow++) {
     let option = document.createElement("div");
-    option.id = "option" + optionRow.toString();
+    option.id = "option-" + optionRow.toString();
     //option.textContent = option.id;
     optionsArea.append(option);
   }
@@ -46,16 +49,35 @@ function selectGame() {
   }
 }
 
-//https://www.js-craft.io/blog/javascript-use-queryselectorall-with-wildcards/
+/**
+ * Display English to Finnish animal names game
+ */
 function displayEngFinAnimals() {
+  // How to use Javascript wildcard was taken from: https://www.js-craft.io/blog/javascript-use-queryselectorall-with-wildcards/
+  //Select the div that's id starts with "0-"
   let gameWords = document.querySelectorAll("[id^='0-'");
   console.log(gameWords);
   let animalNames = Object.values(animals);
   console.log(animalNames);
+  let optionWords = document.querySelectorAll("[id^='option-'");
+  console.log(optionWords);
+
   let x = 0;
-  for (let y = 0; y < gameWords.length; y++) {
+
+  for (let y in gameWords) {
     gameWords[y].textContent = animalNames[x][0];
-    x += 1;
+    if (x < 7) {
+      x += 1;
+    }
+  }
+
+  let b = 0;
+  for (let a in optionWords) {
+    console.log(optionWords[a]);
+    optionWords[a].textContent = animalNames[b][1];
+    if (b < 5) {
+      b += 1;
+    }
   }
   // let originalName = document.getElementById("0-0").textContent;
   // console.log(document.getElementById("0-0").textContent);
