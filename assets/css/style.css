@@ -28,6 +28,7 @@ select {
   display: grid;
   grid-template-columns: 90px 90px 40px;
   grid-template-rows: repeat(8, auto);
+  flex-grow: 0;
 }
 
 #answers-area > div {
@@ -35,7 +36,13 @@ select {
   border: 1px solid black;
   border-radius: 2px;
   margin: 5px;
-  flex-grow: 0;
+  height: 20px;
+}
+
+/* Style the drop zone squares using the class .drop-zone created in script.js*/
+#answers-area .drop-zone {
+  border: 1px dotted black;
+  background-color: aliceblue;
 }
 
 /* W3School was consulted to learn how to create a vertical line: https://www.w3schools.com/howto/howto_css_vertical_line.asp*/
@@ -58,6 +65,7 @@ select {
   border: 1px solid black;
   border-radius: 2px;
   margin: 5px 0 5px 10px;
+  height: 20px;
 }
 
 button {
