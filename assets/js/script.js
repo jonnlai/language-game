@@ -1,14 +1,14 @@
-// Object of different animal names in different languages
-const animals = {
-  dog: ["dog", "koira", "perro"],
-  cat: ["cat", "kissa", "gato"],
-  bird: ["bird", "lintu", "pajaro"],
-  bear: ["bear", "karhu", "oso"],
-  wolf: ["wolf", "susi", "lobo"],
-  snake: ["snake", "käärme", "serpiente"],
-  horse: ["horse", "hevonen", "caballo"],
-  sheep: ["sheep", "lammas", "oveja"],
-};
+// An array of different animal names in different languages
+const animals = [
+  ["dog", "koira", "perro"],
+  ["cat", "kissa", "gato"],
+  ["bird", "lintu", "pajaro"],
+  ["bear", "karhu", "oso"],
+  ["wolf", "susi", "lobo"],
+  ["snake", "käärme", "serpiente"],
+  ["horse", "hevonen", "caballo"],
+  ["sheep", "lammas", "oveja"],
+];
 
 /**
  * Create a grid for the game when the window has finished loading
@@ -60,7 +60,7 @@ function selectGame() {
 function playGame() {
   let selectedOption;
 
-  // Add "drop-zone" class to all div elements with an id starting with "1-"
+  // Add "drop-zone" class to all div elements with an id starting with "1-" to allow the drop zone to be styled differently
   // How to convert NodeList to Array taken from https://www.geeksforgeeks.org/fastest-way-to-convert-javascript-nodelist-to-array/
   let dropZone = Array.from(document.querySelectorAll("[id^='1-'"));
   for (let x in dropZone) {
@@ -96,7 +96,7 @@ function displayEngFinAnimals() {
   // How to use Javascript wildcard was taken from: https://www.js-craft.io/blog/javascript-use-queryselectorall-with-wildcards/
   //Select all the divs that have an id that starts with "0-"
   let gameWords = document.querySelectorAll("[id^='0-'");
-  let animalNames = Object.values(animals);
+  let animalNames = animals;
   //Select all the divs that have an id that starts with "option-"
   let optionWords = document.querySelectorAll("[id^='option-'");
 
@@ -110,11 +110,33 @@ function displayEngFinAnimals() {
   }
 
   // Add the translated Finnish words in the options area
-  let b = 0;
-  for (let a in optionWords) {
-    optionWords[a].textContent = animalNames[b][1];
-    if (b < 5) {
+  let randomIndex = [];
+  let translatedNames = [];
+
+  // Create an array of random index numbers
+  b = 0;
+  while (b < 6) {
+    let num = Math.floor(Math.random() * 8);
+    if (randomIndex.includes(num)) {
+      continue;
+    } else {
+      randomIndex.push(num);
       b += 1;
+    }
+  }
+
+  // Create an array of 6 random animal names in Finnish
+  for (let index in randomIndex) {
+    translatedNames.push(animals[randomIndex[index]][1]);
+  }
+  console.log(translatedNames);
+
+  // Add the animal names to answer options area
+  let c = 0;
+  for (let a in optionWords) {
+    optionWords[a].textContent = translatedNames[c];
+    if (c < 5) {
+      c += 1;
     }
   }
 
