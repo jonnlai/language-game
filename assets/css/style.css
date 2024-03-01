@@ -6,15 +6,21 @@
 
 body {
   text-align: center;
-  margin-top: 10vh;
+  margin-top: 30px;
 }
 
-form {
-  margin: 30px 10px;
+main {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 30px 10px;
 }
 
 select {
   padding: 5px;
+}
+
+#info-area {
+  margin: 30px;
 }
 
 #play-area {
@@ -32,7 +38,7 @@ select {
 }
 
 #answers-area > div {
-  background-color: aqua;
+  background-color: #72aaca;
   border: 1px solid black;
   border-radius: 2px;
   margin: 5px;
@@ -46,11 +52,17 @@ select {
   background-color: aliceblue;
 }
 
+/* How to use CSS wildcard selector taken from: https://www.geeksforgeeks.org/wildcard-selectors-and-in-css-for-classes/#starts-with-wildcard-selector*/
+#answers-area > [id^="2-"] {
+  background-color: aliceblue;
+}
+
 /* W3School was consulted to learn how to create a vertical line: https://www.w3schools.com/howto/howto_css_vertical_line.asp*/
 /*Vertical line to separate the options area from the answers area */
 .vl {
   border-left: 2px dotted black;
   height: 350px;
+  display: none;
 }
 
 #options-area {
@@ -71,17 +83,25 @@ select {
 }
 
 #answer-count {
-  margin-top: 10px;
+  margin: 10px 5px;
 }
 
 #answer-count > span {
-  margin: 10px;
+  margin: 5px;
   font-weight: bold;
 }
 
 button {
-  margin: 30px;
+  margin: 30px auto 0 auto;
   padding: 10px;
   border-radius: 5px;
   font-weight: bold;
+}
+
+@media screen and (min-width: 600px) {
+  main {
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: blanchedalmond;
+  }
 }

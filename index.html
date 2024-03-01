@@ -9,6 +9,11 @@
   <body>
     <h1>Boost your vocabulary</h1>
     <main>
+      <div id="info-area">
+        Boost your vocabulary by playing this game! You need to drag and drop
+        the words in target next to their translation in your chosen language.
+        Select your prefered language combination and theme and click play
+      </div>
       <form id="selection-area" action="">
         <div id="select-mode">
           <label for="mode">Select the game mode:</label>
@@ -26,7 +31,8 @@
           </select>
         </div>
       </form>
-      <div id="info-area"></div>
+
+      <button id="play-button" onclick="loadGame()">Play!</button>
       <div id="play-area">
         <div id="answers-area"></div>
         <div class="vl"></div>
@@ -34,7 +40,7 @@
       </div>
       <div id="answer-count"></div>
       <div id="buttons">
-        <button onclick="checkAnswer()" id="submit-answer">Submit</button>
+        <!-- <button onclick="checkAnswer()" id="submit-answer">Submit</button> -->
       </div>
     </main>
     <!-- Font Awesome kit -->

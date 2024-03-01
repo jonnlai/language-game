@@ -11,10 +11,15 @@ const animals = [
 ];
 
 /**
- * Create a grid for the game when the window has finished loading
- * How to use a for loop to create a grid when the window loads was taken from: https://github.com/ImKennyYip/slide-puzzle/blob/master/puzzle.js
+ * Create a grid for the game when Play button is clicked
+ * How to use a for loop to create a grid was taken from: https://github.com/ImKennyYip/slide-puzzle/blob/master/puzzle.js
  */
-window.onload = function () {
+
+function loadGame() {
+  document.getElementById("play-button").style.display = "none";
+  document.getElementById("selection-area").style.display = "none";
+  document.getElementById("info-area").style.display = "none";
+
   let answersArea = document.getElementById("answers-area");
   let answerColumns = 3;
   let answerRows = 8;
@@ -22,7 +27,6 @@ window.onload = function () {
     for (let col = 0; col < answerColumns; col++) {
       let square = document.createElement("div");
       square.id = col.toString() + "-" + row.toString();
-      //square.textContent = square.id;
       answersArea.append(square);
     }
   }
@@ -34,13 +38,11 @@ window.onload = function () {
     option.id = "option-" + optionRow.toString();
     // How to make an element draggable was taken from Darwin Tech JavaScript Drag and Drop Youtube tutorial: https://www.youtube.com/watch?v=_G8G1OrEOrI
     option.draggable = "true";
-    option.style.touchAction = "none";
-    option.className = "answer";
-    //option.textContent = option.id;
+    option.className = "draggable";
     optionsArea.append(option);
   }
   selectGame();
-};
+}
 
 /**
  * Display the selected game based on "mode" and "theme" values
@@ -60,12 +62,18 @@ function selectGame() {
  * and Darwin Tech JavaScript Drag and Drop Youtube tutorial: https://www.youtube.com/watch?v=_G8G1OrEOrI
  */
 function playGame() {
-  let selectedOption;
+  // Add submit button
+  let submitBtn = document.createElement("button");
+  submitBtn.innerText = "Submit";
+  submitBtn.id = "submit-answer";
+  submitBtn.addEventListener("click", checkAnswer);
+  document.getElementById("buttons").append(submitBtn);
 
-  // Add "drop-zone" class to all div elements with an id starting with "1-" to allow the drop zone to be styled differently
+  let selectedOption;
   // How to convert NodeList to Array taken from https://www.geeksforgeeks.org/fastest-way-to-convert-javascript-nodelist-to-array/
   let dropZone = Array.from(document.querySelectorAll("[id^='1-']"));
   for (let x in dropZone) {
+    // Add "drop-zone" class to all div elements with an id starting with "1-" to allow the drop zone to be styled differently
     dropZone[x].classList.add("drop-zone");
     dropZone[x].addEventListener("dragover", function (event) {
       event.preventDefault();
@@ -149,7 +157,8 @@ function checkAnswer() {
   // Create "Play Again" button
   let againBtn = document.createElement("button");
   againBtn.innerText = "Play Again";
-  // againBtn.addEventListener("click", displayEngFinAnimals);
+  againBtn.id = "play-again";
+  // againBtn.addEventListener("click", playAgain);
   document.getElementById("buttons").append(againBtn);
   //Check Answer
   let answerSquares = Array.from(document.querySelectorAll("[id^='1-']"));
@@ -317,3 +326,13 @@ function checkAnswer() {
     .getElementById("answer-count")
     .append(correctAnswers, incorrectAnswers);
 }
+
+// function playAgain() {
+//   document.getElementById("play-area").style.display = "none";
+//   document.getElementById("submit-answer").style.display = "none";
+//   document.getElementById("play-again").style.display = "none";
+//   document.getElementById("answer-count").style.display = "none";
+//   document.getElementById("play").style.display = "block";
+//   document.getElementById("selection-area").style.display = "block";
+//   document.getElementById("info-area").style.display = "block";
+// }
