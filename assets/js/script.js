@@ -34,6 +34,7 @@ window.onload = function () {
     option.id = "option-" + optionRow.toString();
     // How to make an element draggable was taken from Darwin Tech JavaScript Drag and Drop Youtube tutorial: https://www.youtube.com/watch?v=_G8G1OrEOrI
     option.draggable = "true";
+    option.style.touchAction = "none";
     option.className = "answer";
     //option.textContent = option.id;
     optionsArea.append(option);
