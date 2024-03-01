@@ -158,7 +158,7 @@ function checkAnswer() {
   let againBtn = document.createElement("button");
   againBtn.innerText = "Play Again";
   againBtn.id = "play-again";
-  // againBtn.addEventListener("click", playAgain);
+  againBtn.addEventListener("click", playAgain);
   document.getElementById("buttons").append(againBtn);
   //Check Answer
   let answerSquares = Array.from(document.querySelectorAll("[id^='1-']"));
@@ -327,12 +327,13 @@ function checkAnswer() {
     .append(correctAnswers, incorrectAnswers);
 }
 
-// function playAgain() {
-//   document.getElementById("play-area").style.display = "none";
-//   document.getElementById("submit-answer").style.display = "none";
-//   document.getElementById("play-again").style.display = "none";
-//   document.getElementById("answer-count").style.display = "none";
-//   document.getElementById("play").style.display = "block";
-//   document.getElementById("selection-area").style.display = "block";
-//   document.getElementById("info-area").style.display = "block";
-// }
+function playAgain() {
+  location.reload();
+  //   document.getElementById("play-area").style.display = "none";
+  //   document.getElementById("submit-answer").style.display = "none";
+  //   document.getElementById("play-again").style.display = "none";
+  //   document.getElementById("answer-count").style.display = "none";
+  //   document.getElementById("play").style.display = "block";
+  //   document.getElementById("selection-area").style.display = "block";
+  //   document.getElementById("info-area").style.display = "block";
+}
