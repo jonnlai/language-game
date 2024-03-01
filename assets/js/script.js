@@ -143,6 +143,14 @@ function displayEngFinAnimals() {
 }
 
 function checkAnswer() {
+  // Revome the submit button after clicked
+  document.getElementById("submit-answer").style.display = "none";
+  // Create "Play Again" button
+  let againBtn = document.createElement("button");
+  againBtn.innerText = "Play Again";
+  // againBtn.addEventListener("click", displayEngFinAnimals);
+  document.getElementById("buttons").append(againBtn);
+  //Check Answer
   let answerSquares = Array.from(document.querySelectorAll("[id^='1-']"));
   let answers = [];
   let answerIds = [];
@@ -156,10 +164,14 @@ function checkAnswer() {
   for (let answer in answers) {
     answerIds += answers[answer].id + " ";
   }
-  console.log(answerIds);
-  // Correct and Incorrect symbols
-  let correct = '<i class="fa-solid fa-check"></i>';
-  let incorrect = '<i class="fa-solid fa-xmark"></i>';
+  // Correct and Incorrect icons
+  let correctIcon = '<i class="fa-solid fa-check"></i>';
+  let incorrectIcon = '<i class="fa-solid fa-xmark"></i>';
+  // Count correct and incorrect answers
+  let correctCount = 0;
+  let incorrectCount = 0;
+  let correctAnswers = document.createElement("span");
+  let incorrectAnswers = document.createElement("span");
 
   // Check if an ID is on the answerIds array and if so create an answerSquare variable and check it's inner text
   if (answerIds.includes("1-0")) {
@@ -169,11 +181,13 @@ function checkAnswer() {
     if (answerSquareOne === animals[0][1]) {
       document.getElementById("1-0").style.backgroundColor = "lightgreen";
       document.getElementById("2-0").style.backgroundColor = "lightgreen";
-      document.getElementById("2-0").innerHTML = correct;
+      document.getElementById("2-0").innerHTML = correctIcon;
+      correctCount += 1;
     } else {
       document.getElementById("1-0").style.backgroundColor = "#ff2800";
       document.getElementById("2-0").style.backgroundColor = "#ff2800";
-      document.getElementById("2-0").innerHTML = incorrect;
+      document.getElementById("2-0").innerHTML = incorrectIcon;
+      incorrectCount += 1;
     }
   }
 
@@ -184,11 +198,13 @@ function checkAnswer() {
     if (answerSquareTwo === animals[1][1]) {
       document.getElementById("1-1").style.backgroundColor = "lightgreen";
       document.getElementById("2-1").style.backgroundColor = "lightgreen";
-      document.getElementById("2-1").innerHTML = correct;
+      document.getElementById("2-1").innerHTML = correctIcon;
+      correctCount += 1;
     } else {
       document.getElementById("1-1").style.backgroundColor = "#ff2800";
       document.getElementById("2-1").style.backgroundColor = "#ff2800";
-      document.getElementById("2-1").innerHTML = incorrect;
+      document.getElementById("2-1").innerHTML = incorrectIcon;
+      incorrectCount += 1;
     }
   }
 
@@ -199,11 +215,13 @@ function checkAnswer() {
     if (answerSquareThree === animals[2][1]) {
       document.getElementById("1-2").style.backgroundColor = "lightgreen";
       document.getElementById("2-2").style.backgroundColor = "lightgreen";
-      document.getElementById("2-2").innerHTML = correct;
+      document.getElementById("2-2").innerHTML = correctIcon;
+      correctCount += 1;
     } else {
       document.getElementById("1-2").style.backgroundColor = "#ff2800";
       document.getElementById("2-2").style.backgroundColor = "#ff2800";
-      document.getElementById("2-2").innerHTML = incorrect;
+      document.getElementById("2-2").innerHTML = incorrectIcon;
+      incorrectCount += 1;
     }
   }
 
@@ -214,11 +232,13 @@ function checkAnswer() {
     if (answerSquareFour === animals[3][1]) {
       document.getElementById("1-3").style.backgroundColor = "lightgreen";
       document.getElementById("2-3").style.backgroundColor = "lightgreen";
-      document.getElementById("2-3").innerHTML = correct;
+      document.getElementById("2-3").innerHTML = correctIcon;
+      correctCount += 1;
     } else {
       document.getElementById("1-3").style.backgroundColor = "#ff2800";
       document.getElementById("2-3").style.backgroundColor = "#ff2800";
-      document.getElementById("2-3").innerHTML = incorrect;
+      document.getElementById("2-3").innerHTML = incorrectIcon;
+      incorrectCount += 1;
     }
   }
 
@@ -229,11 +249,13 @@ function checkAnswer() {
     if (answerSquareFive === animals[4][1]) {
       document.getElementById("1-4").style.backgroundColor = "lightgreen";
       document.getElementById("2-4").style.backgroundColor = "lightgreen";
-      document.getElementById("2-4").innerHTML = correct;
+      document.getElementById("2-4").innerHTML = correctIcon;
+      correctCount += 1;
     } else {
       document.getElementById("1-4").style.backgroundColor = "#ff2800";
       document.getElementById("2-4").style.backgroundColor = "#ff2800";
-      document.getElementById("2-4").innerHTML = incorrect;
+      document.getElementById("2-4").innerHTML = incorrectIcon;
+      incorrectCount += 1;
     }
   }
 
@@ -244,11 +266,13 @@ function checkAnswer() {
     if (answerSquareSix === animals[5][1]) {
       document.getElementById("1-5").style.backgroundColor = "lightgreen";
       document.getElementById("2-5").style.backgroundColor = "lightgreen";
-      document.getElementById("2-5").innerHTML = correct;
+      document.getElementById("2-5").innerHTML = correctIcon;
+      correctCount += 1;
     } else {
       document.getElementById("1-5").style.backgroundColor = "#ff2800";
       document.getElementById("2-5").style.backgroundColor = "#ff2800";
-      document.getElementById("2-5").innerHTML = incorrect;
+      document.getElementById("2-5").innerHTML = incorrectIcon;
+      incorrectCount += 1;
     }
   }
 
@@ -259,11 +283,13 @@ function checkAnswer() {
     if (answerSquareSeven === animals[6][1]) {
       document.getElementById("1-6").style.backgroundColor = "lightgreen";
       document.getElementById("2-6").style.backgroundColor = "lightgreen";
-      document.getElementById("2-6").innerHTML = correct;
+      document.getElementById("2-6").innerHTML = correctIcon;
+      correctCount += 1;
     } else {
       document.getElementById("1-6").style.backgroundColor = "#ff2800";
       document.getElementById("2-6").style.backgroundColor = "#ff2800";
-      document.getElementById("2-6").innerHTML = incorrect;
+      document.getElementById("2-6").innerHTML = incorrectIcon;
+      incorrectCount += 1;
     }
   }
 
@@ -274,11 +300,19 @@ function checkAnswer() {
     if (answerSquareEight === animals[7][1]) {
       document.getElementById("1-7").style.backgroundColor = "lightgreen";
       document.getElementById("2-7").style.backgroundColor = "lightgreen";
-      document.getElementById("2-7").innerHTML = correct;
+      document.getElementById("2-7").innerHTML = correctIcon;
+      correctCount += 1;
     } else {
       document.getElementById("1-7").style.backgroundColor = "#ff2800";
       document.getElementById("2-7").style.backgroundColor = "#ff2800";
-      document.getElementById("2-7").innerHTML = incorrect;
+      document.getElementById("2-7").innerHTML = incorrectIcon;
+      incorrectCount += 1;
     }
   }
+
+  correctAnswers.innerText = `Correct answers: ${correctCount}`;
+  incorrectAnswers.innerText = `Incorrect answers: ${incorrectCount}`;
+  document
+    .getElementById("answer-count")
+    .append(correctAnswers, incorrectAnswers);
 }

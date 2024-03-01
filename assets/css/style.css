@@ -36,7 +36,8 @@ select {
   border: 1px solid black;
   border-radius: 2px;
   margin: 5px;
-  height: 20px;
+  height: 30px;
+  padding: 5px;
 }
 
 /* Style the drop zone squares using the class .drop-zone created in script.js*/
@@ -49,7 +50,7 @@ select {
 /*Vertical line to separate the options area from the answers area */
 .vl {
   border-left: 2px dotted black;
-  height: 236px;
+  height: 350px;
 }
 
 #options-area {
@@ -65,10 +66,21 @@ select {
   border: 1px solid black;
   border-radius: 2px;
   margin: 5px 0 5px 10px;
-  height: 20px;
+  height: 30px;
+  padding: 5px;
+}
+
+#answer-count {
+  margin-top: 10px;
+}
+
+#answer-count > span {
+  margin: 10px;
+  font-weight: bold;
 }
 
 button {
+  margin: 30px;
   padding: 10px;
   border-radius: 5px;
   font-weight: bold;
