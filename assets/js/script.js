@@ -34,6 +34,7 @@ window.onload = function () {
     option.id = "option-" + optionRow.toString();
     // How to make an element draggable was taken from Darwin Tech JavaScript Drag and Drop Youtube tutorial: https://www.youtube.com/watch?v=_G8G1OrEOrI
     option.draggable = "true";
+    option.className = "answer";
     //option.textContent = option.id;
     optionsArea.append(option);
   }
@@ -62,7 +63,7 @@ function playGame() {
 
   // Add "drop-zone" class to all div elements with an id starting with "1-" to allow the drop zone to be styled differently
   // How to convert NodeList to Array taken from https://www.geeksforgeeks.org/fastest-way-to-convert-javascript-nodelist-to-array/
-  let dropZone = Array.from(document.querySelectorAll("[id^='1-'"));
+  let dropZone = Array.from(document.querySelectorAll("[id^='1-']"));
   for (let x in dropZone) {
     dropZone[x].classList.add("drop-zone");
     dropZone[x].addEventListener("dragover", function (event) {
@@ -73,7 +74,7 @@ function playGame() {
     });
   }
 
-  let optionWords = Array.from(document.querySelectorAll("[id^='option-'"));
+  let optionWords = Array.from(document.querySelectorAll("[id^='option-']"));
   for (let x in optionWords) {
     optionWords[x].addEventListener("dragstart", function () {
       selectedOption = this;
@@ -99,7 +100,6 @@ function displayEngFinAnimals() {
   let animalNames = animals;
   //Select all the divs that have an id that starts with "option-"
   let optionWords = document.querySelectorAll("[id^='option-'");
-
   // Add the English words in the game area
   let x = 0;
   for (let y in gameWords) {
@@ -129,7 +129,6 @@ function displayEngFinAnimals() {
   for (let index in randomIndex) {
     translatedNames.push(animals[randomIndex[index]][1]);
   }
-  console.log(translatedNames);
 
   // Add the animal names to answer options area
   let c = 0;
@@ -141,4 +140,145 @@ function displayEngFinAnimals() {
   }
 
   playGame();
+}
+
+function checkAnswer() {
+  let answerSquares = Array.from(document.querySelectorAll("[id^='1-']"));
+  let answers = [];
+  let answerIds = [];
+  // Check which answer squares have child node i.e. draggable answers and those to the answers array
+  for (let square in answerSquares) {
+    if (answerSquares[square].hasChildNodes()) {
+      answers.push(answerSquares[square]);
+    }
+  }
+  // Create an array of ids of the divs that hold an answer
+  for (let answer in answers) {
+    answerIds += answers[answer].id + " ";
+  }
+  console.log(answerIds);
+  // Correct and Incorrect symbols
+  let correct = '<i class="fa-solid fa-check"></i>';
+  let incorrect = '<i class="fa-solid fa-xmark"></i>';
+
+  // Check if an ID is on the answerIds array and if so create an answerSquare variable and check it's inner text
+  if (answerIds.includes("1-0")) {
+    let answerSquareOne = document
+      .getElementById("1-0")
+      .querySelector("div").innerText;
+    if (answerSquareOne === animals[0][1]) {
+      document.getElementById("1-0").style.backgroundColor = "lightgreen";
+      document.getElementById("2-0").style.backgroundColor = "lightgreen";
+      document.getElementById("2-0").innerHTML = correct;
+    } else {
+      document.getElementById("1-0").style.backgroundColor = "#ff2800";
+      document.getElementById("2-0").style.backgroundColor = "#ff2800";
+      document.getElementById("2-0").innerHTML = incorrect;
+    }
+  }
+
+  if (answerIds.includes("1-1")) {
+    let answerSquareTwo = document
+      .getElementById("1-1")
+      .querySelector("div").innerText;
+    if (answerSquareTwo === animals[1][1]) {
+      document.getElementById("1-1").style.backgroundColor = "lightgreen";
+      document.getElementById("2-1").style.backgroundColor = "lightgreen";
+      document.getElementById("2-1").innerHTML = correct;
+    } else {
+      document.getElementById("1-1").style.backgroundColor = "#ff2800";
+      document.getElementById("2-1").style.backgroundColor = "#ff2800";
+      document.getElementById("2-1").innerHTML = incorrect;
+    }
+  }
+
+  if (answerIds.includes("1-2")) {
+    let answerSquareThree = document
+      .getElementById("1-2")
+      .querySelector("div").innerText;
+    if (answerSquareThree === animals[2][1]) {
+      document.getElementById("1-2").style.backgroundColor = "lightgreen";
+      document.getElementById("2-2").style.backgroundColor = "lightgreen";
+      document.getElementById("2-2").innerHTML = correct;
+    } else {
+      document.getElementById("1-2").style.backgroundColor = "#ff2800";
+      document.getElementById("2-2").style.backgroundColor = "#ff2800";
+      document.getElementById("2-2").innerHTML = incorrect;
+    }
+  }
+
+  if (answerIds.includes("1-3")) {
+    let answerSquareFour = document
+      .getElementById("1-3")
+      .querySelector("div").innerText;
+    if (answerSquareFour === animals[3][1]) {
+      document.getElementById("1-3").style.backgroundColor = "lightgreen";
+      document.getElementById("2-3").style.backgroundColor = "lightgreen";
+      document.getElementById("2-3").innerHTML = correct;
+    } else {
+      document.getElementById("1-3").style.backgroundColor = "#ff2800";
+      document.getElementById("2-3").style.backgroundColor = "#ff2800";
+      document.getElementById("2-3").innerHTML = incorrect;
+    }
+  }
+
+  if (answerIds.includes("1-4")) {
+    let answerSquareFive = document
+      .getElementById("1-4")
+      .querySelector("div").innerText;
+    if (answerSquareFive === animals[4][1]) {
+      document.getElementById("1-4").style.backgroundColor = "lightgreen";
+      document.getElementById("2-4").style.backgroundColor = "lightgreen";
+      document.getElementById("2-4").innerHTML = correct;
+    } else {
+      document.getElementById("1-4").style.backgroundColor = "#ff2800";
+      document.getElementById("2-4").style.backgroundColor = "#ff2800";
+      document.getElementById("2-4").innerHTML = incorrect;
+    }
+  }
+
+  if (answerIds.includes("1-5")) {
+    let answerSquareSix = document
+      .getElementById("1-5")
+      .querySelector("div").innerText;
+    if (answerSquareSix === animals[5][1]) {
+      document.getElementById("1-5").style.backgroundColor = "lightgreen";
+      document.getElementById("2-5").style.backgroundColor = "lightgreen";
+      document.getElementById("2-5").innerHTML = correct;
+    } else {
+      document.getElementById("1-5").style.backgroundColor = "#ff2800";
+      document.getElementById("2-5").style.backgroundColor = "#ff2800";
+      document.getElementById("2-5").innerHTML = incorrect;
+    }
+  }
+
+  if (answerIds.includes("1-6")) {
+    let answerSquareSeven = document
+      .getElementById("1-6")
+      .querySelector("div").innerText;
+    if (answerSquareSeven === animals[6][1]) {
+      document.getElementById("1-6").style.backgroundColor = "lightgreen";
+      document.getElementById("2-6").style.backgroundColor = "lightgreen";
+      document.getElementById("2-6").innerHTML = correct;
+    } else {
+      document.getElementById("1-6").style.backgroundColor = "#ff2800";
+      document.getElementById("2-6").style.backgroundColor = "#ff2800";
+      document.getElementById("2-6").innerHTML = incorrect;
+    }
+  }
+
+  if (answerIds.includes("1-7")) {
+    let answerSquareEight = document
+      .getElementById("1-7")
+      .querySelector("div").innerText;
+    if (answerSquareEight === animals[7][1]) {
+      document.getElementById("1-7").style.backgroundColor = "lightgreen";
+      document.getElementById("2-7").style.backgroundColor = "lightgreen";
+      document.getElementById("2-7").innerHTML = correct;
+    } else {
+      document.getElementById("1-7").style.backgroundColor = "#ff2800";
+      document.getElementById("2-7").style.backgroundColor = "#ff2800";
+      document.getElementById("2-7").innerHTML = incorrect;
+    }
+  }
 }
