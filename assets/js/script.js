@@ -205,6 +205,9 @@ function displayFinEngAnimals() {
   playGame();
 }
 
+/**
+ * Function to check the answer and replace submit button with play again button
+ */
 function checkAnswer() {
   // Revome the submit button after clicked
   document.getElementById("submit-answer").style.display = "none";
@@ -214,6 +217,7 @@ function checkAnswer() {
   againBtn.id = "play-again";
   againBtn.addEventListener("click", playAgain);
   document.getElementById("buttons").append(againBtn);
+
   //Check Answer
   let answerSquares = Array.from(document.querySelectorAll("[id^='1-']"));
   let answers = [];
@@ -237,12 +241,21 @@ function checkAnswer() {
   let correctAnswers = document.createElement("span");
   let incorrectAnswers = document.createElement("span");
 
+  // Check which game the player is playing by checking the inner text of the first game square (0-0)
+  // Assign the value 1 to X if the first word is in English and 0 if the first word is in Finnish
+  let firstGameWord = document.getElementById("0-0").innerText;
+  let x;
+  if (firstGameWord === animals[0][0]) {
+    x = 1;
+  } else if (firstGameWord === animals[0][1]) {
+    x = 0;
+  }
   // Check if an ID is on the answerIds array and if so create an answerSquare variable and check it's inner text
   if (answerIds.includes("1-0")) {
     let answerSquareOne = document
       .getElementById("1-0")
       .querySelector("div").innerText;
-    if (answerSquareOne === animals[0][1]) {
+    if (answerSquareOne === animals[0][x]) {
       document.getElementById("1-0").style.backgroundColor = "lightgreen";
       document.getElementById("2-0").style.backgroundColor = "lightgreen";
       document.getElementById("2-0").innerHTML = correctIcon;
@@ -259,7 +272,7 @@ function checkAnswer() {
     let answerSquareTwo = document
       .getElementById("1-1")
       .querySelector("div").innerText;
-    if (answerSquareTwo === animals[1][1]) {
+    if (answerSquareTwo === animals[1][x]) {
       document.getElementById("1-1").style.backgroundColor = "lightgreen";
       document.getElementById("2-1").style.backgroundColor = "lightgreen";
       document.getElementById("2-1").innerHTML = correctIcon;
@@ -276,7 +289,7 @@ function checkAnswer() {
     let answerSquareThree = document
       .getElementById("1-2")
       .querySelector("div").innerText;
-    if (answerSquareThree === animals[2][1]) {
+    if (answerSquareThree === animals[2][x]) {
       document.getElementById("1-2").style.backgroundColor = "lightgreen";
       document.getElementById("2-2").style.backgroundColor = "lightgreen";
       document.getElementById("2-2").innerHTML = correctIcon;
@@ -293,7 +306,7 @@ function checkAnswer() {
     let answerSquareFour = document
       .getElementById("1-3")
       .querySelector("div").innerText;
-    if (answerSquareFour === animals[3][1]) {
+    if (answerSquareFour === animals[3][x]) {
       document.getElementById("1-3").style.backgroundColor = "lightgreen";
       document.getElementById("2-3").style.backgroundColor = "lightgreen";
       document.getElementById("2-3").innerHTML = correctIcon;
@@ -310,7 +323,7 @@ function checkAnswer() {
     let answerSquareFive = document
       .getElementById("1-4")
       .querySelector("div").innerText;
-    if (answerSquareFive === animals[4][1]) {
+    if (answerSquareFive === animals[4][x]) {
       document.getElementById("1-4").style.backgroundColor = "lightgreen";
       document.getElementById("2-4").style.backgroundColor = "lightgreen";
       document.getElementById("2-4").innerHTML = correctIcon;
@@ -327,7 +340,7 @@ function checkAnswer() {
     let answerSquareSix = document
       .getElementById("1-5")
       .querySelector("div").innerText;
-    if (answerSquareSix === animals[5][1]) {
+    if (answerSquareSix === animals[5][x]) {
       document.getElementById("1-5").style.backgroundColor = "lightgreen";
       document.getElementById("2-5").style.backgroundColor = "lightgreen";
       document.getElementById("2-5").innerHTML = correctIcon;
@@ -344,7 +357,7 @@ function checkAnswer() {
     let answerSquareSeven = document
       .getElementById("1-6")
       .querySelector("div").innerText;
-    if (answerSquareSeven === animals[6][1]) {
+    if (answerSquareSeven === animals[6][x]) {
       document.getElementById("1-6").style.backgroundColor = "lightgreen";
       document.getElementById("2-6").style.backgroundColor = "lightgreen";
       document.getElementById("2-6").innerHTML = correctIcon;
