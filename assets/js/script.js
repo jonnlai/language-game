@@ -209,8 +209,14 @@ function displayFinEngAnimals() {
  * Function to check the answer and replace submit button with play again button
  */
 function checkAnswer() {
-  // Revome the submit button after clicked
+  // Remove the submit button after it has been clicked
   document.getElementById("submit-answer").style.display = "none";
+  // Stop the draggable elements being draggable
+  let draggables = document.getElementsByClassName("draggable");
+  console.log("draggables");
+  for (let a in draggables) {
+    draggables[a].draggable = false;
+  }
   // Create "Play Again" button
   let againBtn = document.createElement("button");
   againBtn.innerText = "Play Again";
@@ -250,7 +256,7 @@ function checkAnswer() {
   } else if (firstGameWord === animals[0][1]) {
     x = 0;
   }
-  // Check if an ID is on the answerIds array and if so create an answerSquare variable and check it's inner text
+  // Check if an ID is in the answerIds array and if so create an answerSquare variable and check it's inner text
   if (answerIds.includes("1-0")) {
     let answerSquareOne = document
       .getElementById("1-0")
