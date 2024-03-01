@@ -52,6 +52,8 @@ function selectGame() {
   let theme = document.getElementById("theme").value;
   if (mode === "eng-to-fin" && theme === "animals") {
     displayEngFinAnimals();
+  } else if (mode === "fin-to-eng" && theme === "animals") {
+    displayFinEngAnimals();
   }
 }
 
@@ -137,6 +139,58 @@ function displayEngFinAnimals() {
   // Create an array of 6 random animal names in Finnish
   for (let index in randomIndex) {
     translatedNames.push(animals[randomIndex[index]][1]);
+  }
+
+  // Add the animal names to answer options area
+  let c = 0;
+  for (let a in optionWords) {
+    optionWords[a].textContent = translatedNames[c];
+    if (c < 5) {
+      c += 1;
+    }
+  }
+
+  playGame();
+}
+
+/**
+ * Display Finnish to English animal names game
+ */
+function displayFinEngAnimals() {
+  // How to use Javascript wildcard was taken from: https://www.js-craft.io/blog/javascript-use-queryselectorall-with-wildcards/
+  //Select all the divs that have an id that starts with "0-"
+  let gameWords = document.querySelectorAll("[id^='0-'");
+  let animalNames = animals;
+  //Select all the divs that have an id that starts with "option-"
+  let optionWords = document.querySelectorAll("[id^='option-'");
+  // Add the Finnish words in the game area
+  let x = 0;
+  for (let y in gameWords) {
+    gameWords[y].textContent = animalNames[x][1];
+    if (x < 7) {
+      x += 1;
+    }
+  }
+
+  // Add the translated English words in the options area
+  let randomIndex = [];
+  let translatedNames = [];
+
+  // Create an array of random index numbers
+  b = 0;
+  while (b < 6) {
+    let num = Math.floor(Math.random() * 8);
+    if (randomIndex.includes(num)) {
+      continue;
+    } else {
+      randomIndex.push(num);
+      b += 1;
+    }
+  }
+
+  // Create an array of 6 random animal names in English
+  for (let index in randomIndex) {
+    translatedNames.push(animals[randomIndex[index]][0]);
   }
 
   // Add the animal names to answer options area
@@ -328,12 +382,6 @@ function checkAnswer() {
 }
 
 function playAgain() {
+  // How to reload the current document taken from https://www.w3schools.com/jsref/met_loc_reload.asp
   location.reload();
-  //   document.getElementById("play-area").style.display = "none";
-  //   document.getElementById("submit-answer").style.display = "none";
-  //   document.getElementById("play-again").style.display = "none";
-  //   document.getElementById("answer-count").style.display = "none";
-  //   document.getElementById("play").style.display = "block";
-  //   document.getElementById("selection-area").style.display = "block";
-  //   document.getElementById("info-area").style.display = "block";
 }
