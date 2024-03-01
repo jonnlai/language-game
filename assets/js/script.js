@@ -374,7 +374,7 @@ function checkAnswer() {
     let answerSquareEight = document
       .getElementById("1-7")
       .querySelector("div").innerText;
-    if (answerSquareEight === animals[7][1]) {
+    if (answerSquareEight === animals[7][x]) {
       document.getElementById("1-7").style.backgroundColor = "lightgreen";
       document.getElementById("2-7").style.backgroundColor = "lightgreen";
       document.getElementById("2-7").innerHTML = correctIcon;
