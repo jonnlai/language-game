@@ -7,12 +7,14 @@
 body {
   text-align: center;
   margin-top: 30px;
+  background-color: rgb(247, 237, 222);
 }
 
 main {
   max-width: 500px;
-  margin: 30px auto;
+  margin: 10px auto;
   padding: 30px 10px;
+  background-color: rgb(247, 237, 222);
 }
 
 select {
@@ -20,7 +22,7 @@ select {
 }
 
 #info-area {
-  margin: 30px;
+  margin: 0 10px 30px;
 }
 
 #play-area {
@@ -54,7 +56,8 @@ select {
 
 /* How to use CSS wildcard selector taken from: https://www.geeksforgeeks.org/wildcard-selectors-and-in-css-for-classes/#starts-with-wildcard-selector*/
 #answers-area > [id^="2-"] {
-  background-color: aliceblue;
+  background-color: rgb(247, 237, 222);
+  border: none;
 }
 
 /* W3School was consulted to learn how to create a vertical line: https://www.w3schools.com/howto/howto_css_vertical_line.asp*/
@@ -102,6 +105,6 @@ button {
   main {
     border: 1px solid black;
     border-radius: 5px;
-    background-color: blanchedalmond;
+    background-color: rgb(247, 237, 222);
   }
 }
