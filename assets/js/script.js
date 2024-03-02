@@ -73,15 +73,21 @@ function playGame() {
 
   let selectedOption;
   // How to convert NodeList to Array taken from https://www.geeksforgeeks.org/fastest-way-to-convert-javascript-nodelist-to-array/
+  // How to use Javascript wildcard was taken from: https://www.js-craft.io/blog/javascript-use-queryselectorall-with-wildcards/
   let dropZone = Array.from(document.querySelectorAll("[id^='1-']"));
   for (let x in dropZone) {
-    // Add "drop-zone" class to all div elements with an id starting with "1-" to allow the drop zone to be styled differently
+    // Add "drop-zone" class to all the dropZone div elements to make it easier to style them
     dropZone[x].classList.add("drop-zone");
     dropZone[x].addEventListener("dragover", function (event) {
       event.preventDefault();
     });
     dropZone[x].addEventListener("drop", function (event) {
-      dropZone[x].prepend(selectedOption);
+      event.preventDefault();
+      if (event.target.hasChildNodes()) {
+        return;
+      } else {
+        event.target.append(selectedOption);
+      }
     });
   }
 
@@ -97,7 +103,7 @@ function playGame() {
     event.preventDefault();
   });
   optionsArea.addEventListener("drop", function () {
-    optionsArea.prepend(selectedOption);
+    optionsArea.append(selectedOption);
   });
 }
 
@@ -213,7 +219,6 @@ function checkAnswer() {
   document.getElementById("submit-answer").style.display = "none";
   // Stop the draggable elements being draggable
   let draggables = document.getElementsByClassName("draggable");
-  console.log("draggables");
   for (let a in draggables) {
     draggables[a].draggable = false;
   }
