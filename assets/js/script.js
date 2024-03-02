@@ -403,6 +403,15 @@ function checkAnswer() {
   document
     .getElementById("answer-count")
     .append(correctAnswers, incorrectAnswers);
+
+  let message = document.createElement("div");
+  if (correctCount === 6) {
+    message.innerHTML =
+      "<br> Congratulations! You got all the answers correct!";
+  } else {
+    message.innerHTML = `<br> You got ${correctCount} answers correct. Play again to practise?`;
+  }
+  document.getElementById("answer-count").append(message);
 }
 
 function playAgain() {
