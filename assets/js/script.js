@@ -14,15 +14,14 @@ const animals = [
  * Create a grid for the game when Play button is clicked
  * How to use a for loop to create a grid was taken from: https://github.com/ImKennyYip/slide-puzzle/blob/master/puzzle.js
  */
-
 function loadGame() {
   document.getElementById("play-button").style.display = "none";
   document.getElementById("selection-area").style.display = "none";
   document.getElementById("info-area").style.display = "none";
 
-  let answersArea = document.getElementById("answers-area");
-  let answerColumns = 3;
-  let answerRows = 8;
+  const answersArea = document.getElementById("answers-area");
+  const answerColumns = 3;
+  const answerRows = 8;
   for (let row = 0; row < answerRows; row++) {
     for (let col = 0; col < answerColumns; col++) {
       let square = document.createElement("div");
@@ -31,15 +30,14 @@ function loadGame() {
     }
   }
 
-  let optionsArea = document.getElementById("options-area");
-  let optionRows = 6;
+  const optionsArea = document.getElementById("options-area");
+  const optionRows = 6;
   for (let optionRow = 0; optionRow < optionRows; optionRow++) {
     let option = document.createElement("div");
     option.id = "option-" + optionRow.toString();
     // How to make an element draggable was taken from Darwin Tech JavaScript Drag and Drop Youtube tutorial: https://www.youtube.com/watch?v=_G8G1OrEOrI
     option.draggable = "true";
     option.className = "draggable";
-    // option.style.touchAction = "none";
     optionsArea.append(option);
   }
   selectGame();
@@ -66,7 +64,7 @@ function selectGame() {
  */
 function playGame() {
   // Add submit button
-  let submitBtn = document.createElement("button");
+  const submitBtn = document.createElement("button");
   submitBtn.innerText = "Submit";
   submitBtn.id = "submit-answer";
   submitBtn.addEventListener("click", checkAnswer);
@@ -75,14 +73,14 @@ function playGame() {
   let selectedOption;
   // How to convert NodeList to Array taken from https://www.geeksforgeeks.org/fastest-way-to-convert-javascript-nodelist-to-array/
   // How to use Javascript wildcard was taken from: https://www.js-craft.io/blog/javascript-use-queryselectorall-with-wildcards/
-  let dropZone = Array.from(document.querySelectorAll("[id^='1-']"));
-  for (let x in dropZone) {
+  const dropZones = Array.from(document.querySelectorAll("[id^='1-']"));
+  for (let dropZone in dropZones) {
     // Add "drop-zone" class to all the dropZone div elements to make it easier to style them
-    dropZone[x].classList.add("drop-zone");
-    dropZone[x].addEventListener("dragover", function (event) {
+    dropZones[dropZone].classList.add("drop-zone");
+    dropZones[dropZone].addEventListener("dragover", function (event) {
       event.preventDefault();
     });
-    dropZone[x].addEventListener("drop", function (event) {
+    dropZones[dropZone].addEventListener("drop", function (event) {
       event.preventDefault();
       // Check if the dropzone target already has a div inside it to prevent two options being put inside the same dropzone element
       if (event.target.hasChildNodes()) {
@@ -91,10 +89,9 @@ function playGame() {
         event.target.append(selectedOption);
       }
     });
-    dropZone[x].addEventListener(
+    dropZones[dropZone].addEventListener(
       "touchstart",
       function (event) {
-        // event.preventDefault();
         if (event.target.hasChildNodes()) {
           return;
         } else {
@@ -106,12 +103,12 @@ function playGame() {
     );
   }
 
-  let optionWords = Array.from(document.querySelectorAll("[id^='option-']"));
-  for (let x in optionWords) {
-    optionWords[x].addEventListener("dragstart", function () {
+  const options = Array.from(document.querySelectorAll("[id^='option-']"));
+  for (let option in options) {
+    options[option].addEventListener("dragstart", function () {
       selectedOption = this;
     });
-    optionWords[x].addEventListener(
+    options[option].addEventListener(
       "touchstart",
       function () {
         selectedOption = this;
@@ -120,7 +117,7 @@ function playGame() {
     );
   }
 
-  let optionsArea = document.getElementById("options-area");
+  const optionsArea = document.getElementById("options-area");
   optionsArea.addEventListener("dragover", function (event) {
     event.preventDefault();
   });
@@ -134,21 +131,19 @@ function playGame() {
  */
 function displayEngFinAnimals() {
   // How to use Javascript wildcard was taken from: https://www.js-craft.io/blog/javascript-use-queryselectorall-with-wildcards/
-  //Select all the divs that have an id that starts with "0-"
-  let gameWords = document.querySelectorAll("[id^='0-'");
-  let animalNames = animals;
-  //Select all the divs that have an id that starts with "option-"
-  let optionWords = document.querySelectorAll("[id^='option-'");
+  //Select all the divs that have an id that starts with "0-" i.e. the divs that hold the words that needs to be translated
+  const originalWords = document.querySelectorAll("[id^='0-'");
+  //Select all the divs that have an id that starts with "option-" i.e. the divs that hold the options/translated words
+  const options = document.querySelectorAll("[id^='option-'");
   // Add the English words in the game area
   let x = 0;
-  for (let y in gameWords) {
-    gameWords[y].textContent = animalNames[x][0];
+  for (let word in originalWords) {
+    originalWords[word].textContent = animals[x][0];
     if (x < 7) {
       x += 1;
     }
   }
 
-  // Add the translated Finnish words in the options area
   let randomIndex = [];
   let translatedNames = [];
 
@@ -164,15 +159,15 @@ function displayEngFinAnimals() {
     }
   }
 
-  // Create an array of 6 random animal names in Finnish
+  // Create an array of 6 random animal names in Finnish using the random index numbers
   for (let index in randomIndex) {
     translatedNames.push(animals[randomIndex[index]][1]);
   }
 
-  // Add the animal names to answer options area
+  // Add the random translated animal names to the options area
   let c = 0;
-  for (let a in optionWords) {
-    optionWords[a].textContent = translatedNames[c];
+  for (let option in options) {
+    options[option].textContent = translatedNames[c];
     if (c < 5) {
       c += 1;
     }
@@ -186,21 +181,19 @@ function displayEngFinAnimals() {
  */
 function displayFinEngAnimals() {
   // How to use Javascript wildcard was taken from: https://www.js-craft.io/blog/javascript-use-queryselectorall-with-wildcards/
-  //Select all the divs that have an id that starts with "0-"
-  let gameWords = document.querySelectorAll("[id^='0-'");
-  let animalNames = animals;
-  //Select all the divs that have an id that starts with "option-"
-  let optionWords = document.querySelectorAll("[id^='option-'");
+  //Select all the divs that have an id that starts with "0-" i.e. the divs that hold the words that needs to be translated
+  const originalWords = document.querySelectorAll("[id^='0-'");
+  //Select all the divs that have an id that starts with "option-" i.e. the divs that hold the options/translated words
+  let options = document.querySelectorAll("[id^='option-'");
   // Add the Finnish words in the game area
   let x = 0;
-  for (let y in gameWords) {
-    gameWords[y].textContent = animalNames[x][1];
+  for (let word in originalWords) {
+    originalWords[word].textContent = animals[x][1];
     if (x < 7) {
       x += 1;
     }
   }
 
-  // Add the translated English words in the options area
   let randomIndex = [];
   let translatedNames = [];
 
@@ -216,15 +209,15 @@ function displayFinEngAnimals() {
     }
   }
 
-  // Create an array of 6 random animal names in English
+  // Create an array of 6 random animal names in English using the random index numbers
   for (let index in randomIndex) {
     translatedNames.push(animals[randomIndex[index]][0]);
   }
 
-  // Add the animal names to answer options area
+  // Add the random translated animal names to the options area
   let c = 0;
-  for (let a in optionWords) {
-    optionWords[a].textContent = translatedNames[c];
+  for (let option in options) {
+    options[option].textContent = translatedNames[c];
     if (c < 5) {
       c += 1;
     }
@@ -240,34 +233,34 @@ function checkAnswer() {
   // Remove the submit button after it has been clicked
   document.getElementById("submit-answer").style.display = "none";
   // Stop the draggable elements being draggable
-  let draggables = document.getElementsByClassName("draggable");
+  const draggables = document.getElementsByClassName("draggable");
   for (let a in draggables) {
     draggables[a].draggable = false;
   }
   // Create "Play Again" button
-  let againBtn = document.createElement("button");
+  const againBtn = document.createElement("button");
   againBtn.innerText = "Play Again";
   againBtn.id = "play-again";
   againBtn.addEventListener("click", playAgain);
   document.getElementById("buttons").append(againBtn);
 
   //Check Answer
-  let answerSquares = Array.from(document.querySelectorAll("[id^='1-']"));
+  const answerSquares = Array.from(document.querySelectorAll("[id^='1-']"));
   let answers = [];
   let answerIds = [];
-  // Check which answer squares have child node i.e. draggable answers and those to the answers array
+  // Check which answer squares have child node i.e. draggable answers and add those to the answers array
   for (let square in answerSquares) {
     if (answerSquares[square].hasChildNodes()) {
       answers.push(answerSquares[square]);
     }
   }
-  // Create an array of ids of the divs that hold an answer
+  // Create an array of ids of the dropzone divs that hold an answer
   for (let answer in answers) {
     answerIds += answers[answer].id + " ";
   }
   // Correct and Incorrect icons
-  let correctIcon = '<i class="fa-solid fa-check"></i>';
-  let incorrectIcon = '<i class="fa-solid fa-xmark"></i>';
+  const correctIcon = '<i class="fa-solid fa-check"></i>';
+  const incorrectIcon = '<i class="fa-solid fa-xmark"></i>';
   // Count correct and incorrect answers
   let correctCount = 0;
   let incorrectCount = 0;
@@ -276,14 +269,14 @@ function checkAnswer() {
 
   // Check which game the player is playing by checking the inner text of the first game square (0-0)
   // Assign the value 1 to X if the first word is in English and 0 if the first word is in Finnish
-  let firstGameWord = document.getElementById("0-0").innerText;
+  const firstGameWord = document.getElementById("0-0").innerText;
   let x;
   if (firstGameWord === animals[0][0]) {
     x = 1;
   } else if (firstGameWord === animals[0][1]) {
     x = 0;
   }
-  // Check if an ID is in the answerIds array and if so create an answerSquare variable and check it's inner text
+  // Check if an ID is in the answerIds array and if so create an answerSquare variable and check if it's inner text matches the correct answer
   if (answerIds.includes("1-0")) {
     let answerSquareOne = document
       .getElementById("1-0")
@@ -427,7 +420,7 @@ function checkAnswer() {
     .getElementById("answer-count")
     .append(correctAnswers, incorrectAnswers);
 
-  let message = document.createElement("div");
+  const message = document.createElement("div");
   if (correctCount === 6) {
     message.innerHTML =
       "<br> Congratulations! You got all the answers correct!";
