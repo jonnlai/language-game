@@ -39,6 +39,7 @@ function loadGame() {
     // How to make an element draggable was taken from Darwin Tech JavaScript Drag and Drop Youtube tutorial: https://www.youtube.com/watch?v=_G8G1OrEOrI
     option.draggable = "true";
     option.className = "draggable";
+    // option.style.touchAction = "none";
     optionsArea.append(option);
   }
   selectGame();
@@ -83,12 +84,27 @@ function playGame() {
     });
     dropZone[x].addEventListener("drop", function (event) {
       event.preventDefault();
+      // Check if the dropzone target already has a div inside it to prevent two options being put inside the same dropzone element
       if (event.target.hasChildNodes()) {
         return;
       } else {
         event.target.append(selectedOption);
       }
     });
+    dropZone[x].addEventListener(
+      "touchstart",
+      function (event) {
+        // event.preventDefault();
+        if (event.target.hasChildNodes()) {
+          return;
+        } else {
+          event.target.append(selectedOption);
+          console.log("element dropped using touch start");
+        }
+      },
+      // Passive event listener added to improve scrolling performance - https://medium.com/@Esakkimuthu/passive-event-listeners-5dbb1b011fb1
+      { passive: false }
+    );
   }
 
   let optionWords = Array.from(document.querySelectorAll("[id^='option-']"));
@@ -96,6 +112,14 @@ function playGame() {
     optionWords[x].addEventListener("dragstart", function () {
       selectedOption = this;
     });
+    optionWords[x].addEventListener(
+      "touchstart",
+      function () {
+        selectedOption = this;
+        console.log("element selected using touch start");
+      },
+      { passive: false }
+    );
   }
 
   let optionsArea = document.getElementById("options-area");
@@ -398,6 +422,7 @@ function checkAnswer() {
     }
   }
 
+  // Display the count of total correct and incorrect answers and display a message to the user
   correctAnswers.innerText = `Correct answers: ${correctCount}`;
   incorrectAnswers.innerText = `Incorrect answers: ${incorrectCount}`;
   document
@@ -414,6 +439,7 @@ function checkAnswer() {
   document.getElementById("answer-count").append(message);
 }
 
+// Create function to allow the user to restart the game by reloading the document
 function playAgain() {
   // How to reload the current document taken from https://www.w3schools.com/jsref/met_loc_reload.asp
   location.reload();
