@@ -12,8 +12,8 @@ body {
 
 main {
   max-width: 500px;
-  margin: 10px auto;
-  padding: 30px 10px;
+  margin: 20px auto;
+  padding: 10px;
   background-color: rgb(247, 237, 222);
 }
 
@@ -31,26 +31,26 @@ select {
   display: flex;
 }
 
-/* W3Schools and MDN Wed docs were consulted on how to create a grid and how to use grid templates: https://www.w3schools.com/css/css_grid_container.asp and https://developer.mozilla.org/en-US/docs/Web/CSS/grid*/
+/* W3Schools and MDN Wed docs were consulted on how to create a grid and how to use grid templates: https://www.w3schools.com/css/css_grid_container.asp 
+and https://developer.mozilla.org/en-US/docs/Web/CSS/grid*/
 #answers-area {
   display: grid;
   grid-template-columns: 90px 90px 40px;
   grid-template-rows: repeat(8, auto);
-  flex-grow: 0;
 }
 
 #answers-area > div {
   background-color: #72aaca;
   border: 1px solid black;
   border-radius: 2px;
-  margin: 5px;
+  margin: 5px 5px 5px 0;
   height: 30px;
   padding: 5px;
 }
 
 /* Style the drop zone squares using the class .drop-zone created in script.js*/
 #answers-area .drop-zone {
-  border: 1px dotted black;
+  border: 1px dashed black;
   background-color: aliceblue;
 }
 
@@ -60,29 +60,21 @@ select {
   border: none;
 }
 
-/* W3School was consulted to learn how to create a vertical line: https://www.w3schools.com/howto/howto_css_vertical_line.asp*/
-/*Vertical line to separate the options area from the answers area */
-.vl {
-  border-left: 2px dotted black;
-  height: 350px;
-  display: none;
-}
-
 #options-area {
   display: grid;
   grid-template-columns: 90px;
   grid-template-rows: repeat(6, auto);
   padding: 30px 0;
-  flex-grow: 1;
 }
 
 #options-area > div {
   background-color: wheat;
   border: 1px solid black;
   border-radius: 2px;
-  margin: 5px 0 5px 10px;
+  margin: 5px 10px 5px 0;
   height: 30px;
   padding: 5px;
+  cursor: pointer;
 }
 
 #answer-count {
@@ -106,5 +98,6 @@ button {
     border: 1px solid black;
     border-radius: 5px;
     background-color: rgb(247, 237, 222);
+    padding: 30px 10px;
   }
 }

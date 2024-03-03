@@ -59,7 +59,7 @@ function selectGame() {
 }
 
 /**
- * Allow the user to drag and drop the option next to the correct word
+ * Allow the user to move their selected option next to the correct word
  * How to use drag and drop event listeners was taken from: https://github.com/ImKennyYip/slide-puzzle/blob/master/puzzle.js
  * and https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/drag_event
  * and Darwin Tech JavaScript Drag and Drop Youtube tutorial: https://www.youtube.com/watch?v=_G8G1OrEOrI
@@ -99,7 +99,6 @@ function playGame() {
           return;
         } else {
           event.target.append(selectedOption);
-          console.log("element dropped using touch start");
         }
       },
       // Passive event listener added to improve scrolling performance - https://medium.com/@Esakkimuthu/passive-event-listeners-5dbb1b011fb1
@@ -116,7 +115,6 @@ function playGame() {
       "touchstart",
       function () {
         selectedOption = this;
-        console.log("element selected using touch start");
       },
       { passive: false }
     );
@@ -433,6 +431,8 @@ function checkAnswer() {
   if (correctCount === 6) {
     message.innerHTML =
       "<br> Congratulations! You got all the answers correct!";
+  } else if (correctCount === 1) {
+    message.innerHTML = `<br> You got ${correctCount} answer correct. Play again to practise?`;
   } else {
     message.innerHTML = `<br> You got ${correctCount} answers correct. Play again to practise?`;
   }
