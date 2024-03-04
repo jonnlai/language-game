@@ -276,140 +276,32 @@ function checkAnswer() {
   } else if (firstGameWord === animals[0][1]) {
     x = 0;
   }
+
   // Check if an ID is in the answerIds array and if so create an answerSquare variable and check if it's inner text matches the correct answer
-  if (answerIds.includes("1-0")) {
-    let answerSquareOne = document
-      .getElementById("1-0")
-      .querySelector("div").innerText;
-    if (answerSquareOne === animals[0][x]) {
-      document.getElementById("1-0").style.backgroundColor = "lightgreen";
-      document.getElementById("2-0").style.backgroundColor = "lightgreen";
-      document.getElementById("2-0").innerHTML = correctIcon;
-      correctCount += 1;
+  let y = 0;
+  while (y < 8) {
+    let id = "1-" + y;
+    let idTwo = "2-" + y;
+    if (answerIds.includes(id)) {
+      let answerSquareOne = document
+        .getElementById(id)
+        .querySelector("div").innerText;
+      if (answerSquareOne === animals[y][x]) {
+        document.getElementById(id).style.backgroundColor = "lightgreen";
+        document.getElementById(idTwo).style.backgroundColor = "lightgreen";
+        document.getElementById(idTwo).innerHTML = correctIcon;
+        correctCount += 1;
+        y += 1;
+      } else {
+        document.getElementById(id).style.backgroundColor = "#ff2800";
+        document.getElementById(idTwo).style.backgroundColor = "#ff2800";
+        document.getElementById(idTwo).innerHTML = incorrectIcon;
+        incorrectCount += 1;
+        y += 1;
+      }
     } else {
-      document.getElementById("1-0").style.backgroundColor = "#ff2800";
-      document.getElementById("2-0").style.backgroundColor = "#ff2800";
-      document.getElementById("2-0").innerHTML = incorrectIcon;
-      incorrectCount += 1;
-    }
-  }
-
-  if (answerIds.includes("1-1")) {
-    let answerSquareTwo = document
-      .getElementById("1-1")
-      .querySelector("div").innerText;
-    if (answerSquareTwo === animals[1][x]) {
-      document.getElementById("1-1").style.backgroundColor = "lightgreen";
-      document.getElementById("2-1").style.backgroundColor = "lightgreen";
-      document.getElementById("2-1").innerHTML = correctIcon;
-      correctCount += 1;
-    } else {
-      document.getElementById("1-1").style.backgroundColor = "#ff2800";
-      document.getElementById("2-1").style.backgroundColor = "#ff2800";
-      document.getElementById("2-1").innerHTML = incorrectIcon;
-      incorrectCount += 1;
-    }
-  }
-
-  if (answerIds.includes("1-2")) {
-    let answerSquareThree = document
-      .getElementById("1-2")
-      .querySelector("div").innerText;
-    if (answerSquareThree === animals[2][x]) {
-      document.getElementById("1-2").style.backgroundColor = "lightgreen";
-      document.getElementById("2-2").style.backgroundColor = "lightgreen";
-      document.getElementById("2-2").innerHTML = correctIcon;
-      correctCount += 1;
-    } else {
-      document.getElementById("1-2").style.backgroundColor = "#ff2800";
-      document.getElementById("2-2").style.backgroundColor = "#ff2800";
-      document.getElementById("2-2").innerHTML = incorrectIcon;
-      incorrectCount += 1;
-    }
-  }
-
-  if (answerIds.includes("1-3")) {
-    let answerSquareFour = document
-      .getElementById("1-3")
-      .querySelector("div").innerText;
-    if (answerSquareFour === animals[3][x]) {
-      document.getElementById("1-3").style.backgroundColor = "lightgreen";
-      document.getElementById("2-3").style.backgroundColor = "lightgreen";
-      document.getElementById("2-3").innerHTML = correctIcon;
-      correctCount += 1;
-    } else {
-      document.getElementById("1-3").style.backgroundColor = "#ff2800";
-      document.getElementById("2-3").style.backgroundColor = "#ff2800";
-      document.getElementById("2-3").innerHTML = incorrectIcon;
-      incorrectCount += 1;
-    }
-  }
-
-  if (answerIds.includes("1-4")) {
-    let answerSquareFive = document
-      .getElementById("1-4")
-      .querySelector("div").innerText;
-    if (answerSquareFive === animals[4][x]) {
-      document.getElementById("1-4").style.backgroundColor = "lightgreen";
-      document.getElementById("2-4").style.backgroundColor = "lightgreen";
-      document.getElementById("2-4").innerHTML = correctIcon;
-      correctCount += 1;
-    } else {
-      document.getElementById("1-4").style.backgroundColor = "#ff2800";
-      document.getElementById("2-4").style.backgroundColor = "#ff2800";
-      document.getElementById("2-4").innerHTML = incorrectIcon;
-      incorrectCount += 1;
-    }
-  }
-
-  if (answerIds.includes("1-5")) {
-    let answerSquareSix = document
-      .getElementById("1-5")
-      .querySelector("div").innerText;
-    if (answerSquareSix === animals[5][x]) {
-      document.getElementById("1-5").style.backgroundColor = "lightgreen";
-      document.getElementById("2-5").style.backgroundColor = "lightgreen";
-      document.getElementById("2-5").innerHTML = correctIcon;
-      correctCount += 1;
-    } else {
-      document.getElementById("1-5").style.backgroundColor = "#ff2800";
-      document.getElementById("2-5").style.backgroundColor = "#ff2800";
-      document.getElementById("2-5").innerHTML = incorrectIcon;
-      incorrectCount += 1;
-    }
-  }
-
-  if (answerIds.includes("1-6")) {
-    let answerSquareSeven = document
-      .getElementById("1-6")
-      .querySelector("div").innerText;
-    if (answerSquareSeven === animals[6][x]) {
-      document.getElementById("1-6").style.backgroundColor = "lightgreen";
-      document.getElementById("2-6").style.backgroundColor = "lightgreen";
-      document.getElementById("2-6").innerHTML = correctIcon;
-      correctCount += 1;
-    } else {
-      document.getElementById("1-6").style.backgroundColor = "#ff2800";
-      document.getElementById("2-6").style.backgroundColor = "#ff2800";
-      document.getElementById("2-6").innerHTML = incorrectIcon;
-      incorrectCount += 1;
-    }
-  }
-
-  if (answerIds.includes("1-7")) {
-    let answerSquareEight = document
-      .getElementById("1-7")
-      .querySelector("div").innerText;
-    if (answerSquareEight === animals[7][x]) {
-      document.getElementById("1-7").style.backgroundColor = "lightgreen";
-      document.getElementById("2-7").style.backgroundColor = "lightgreen";
-      document.getElementById("2-7").innerHTML = correctIcon;
-      correctCount += 1;
-    } else {
-      document.getElementById("1-7").style.backgroundColor = "#ff2800";
-      document.getElementById("2-7").style.backgroundColor = "#ff2800";
-      document.getElementById("2-7").innerHTML = incorrectIcon;
-      incorrectCount += 1;
+      y += 1;
+      continue;
     }
   }
 
