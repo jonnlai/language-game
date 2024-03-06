@@ -10,6 +10,18 @@ const animals = [
   ["sheep", "lammas", "oveja"],
 ];
 
+// An array of different words relating to nature
+const nature = [
+  ["tree", "puu", "árbol"],
+  ["flower", "kukka", "flor"],
+  ["forest", "metsä", "bosque"],
+  ["lake", "järvi", "lago"],
+  ["sea", "meri", "mar"],
+  ["berry", "marja", "baya"],
+  ["sun", "aurinko", "sol"],
+  ["rain", "sade", "lluvia"],
+];
+
 /**
  * Create a grid for the game when Play button is clicked
  * How to use a for loop to create a grid was taken from: https://github.com/ImKennyYip/slide-puzzle/blob/master/puzzle.js
@@ -54,6 +66,10 @@ function selectGame() {
     displayEngFinAnimals();
   } else if (mode === "fin-to-eng" && theme === "animals") {
     displayFinEngAnimals();
+  } else if (mode === "eng-to-fin" && theme === "nature") {
+    displayEngFinNature();
+  } else if (mode === "fin-to-eng" && theme === "nature") {
+    displayFinEngNature();
   }
 }
 
@@ -230,6 +246,106 @@ function displayFinEngAnimals() {
 }
 
 /**
+ * Display English to Finnish nature words game
+ */
+function displayEngFinNature() {
+  // How to use Javascript wildcard was taken from: https://www.js-craft.io/blog/javascript-use-queryselectorall-with-wildcards/
+  //Select all the divs that have an id that starts with "0-" i.e. the divs that hold the words that needs to be translated
+  const originalWords = document.querySelectorAll("[id^='0-'");
+  //Select all the divs that have an id that starts with "option-" i.e. the divs that hold the options/translated words
+  const options = document.querySelectorAll("[id^='option-'");
+  // Add the English words in the game area
+  let x = 0;
+  for (let word in originalWords) {
+    originalWords[word].textContent = nature[x][0];
+    if (x < 7) {
+      x += 1;
+    }
+  }
+
+  let randomIndex = [];
+  let translatedNames = [];
+
+  // Create an array of random index numbers
+  b = 0;
+  while (b < 6) {
+    let num = Math.floor(Math.random() * 8);
+    if (randomIndex.includes(num)) {
+      continue;
+    } else {
+      randomIndex.push(num);
+      b += 1;
+    }
+  }
+
+  // Create an array of 6 random animal names in Finnish using the random index numbers
+  for (let index in randomIndex) {
+    translatedNames.push(nature[randomIndex[index]][1]);
+  }
+
+  // Add the random translated animal names to the options area
+  let c = 0;
+  for (let option in options) {
+    options[option].textContent = translatedNames[c];
+    if (c < 5) {
+      c += 1;
+    }
+  }
+
+  playGame();
+}
+
+/**
+ * Display Finnish to English nature words game
+ */
+function displayFinEngNature() {
+  // How to use Javascript wildcard was taken from: https://www.js-craft.io/blog/javascript-use-queryselectorall-with-wildcards/
+  //Select all the divs that have an id that starts with "0-" i.e. the divs that hold the words that needs to be translated
+  const originalWords = document.querySelectorAll("[id^='0-'");
+  //Select all the divs that have an id that starts with "option-" i.e. the divs that hold the options/translated words
+  const options = document.querySelectorAll("[id^='option-'");
+  // Add the English words in the game area
+  let x = 0;
+  for (let word in originalWords) {
+    originalWords[word].textContent = nature[x][1];
+    if (x < 7) {
+      x += 1;
+    }
+  }
+
+  let randomIndex = [];
+  let translatedNames = [];
+
+  // Create an array of random index numbers
+  b = 0;
+  while (b < 6) {
+    let num = Math.floor(Math.random() * 8);
+    if (randomIndex.includes(num)) {
+      continue;
+    } else {
+      randomIndex.push(num);
+      b += 1;
+    }
+  }
+
+  // Create an array of 6 random animal names in Finnish using the random index numbers
+  for (let index in randomIndex) {
+    translatedNames.push(nature[randomIndex[index]][0]);
+  }
+
+  // Add the random translated animal names to the options area
+  let c = 0;
+  for (let option in options) {
+    options[option].textContent = translatedNames[c];
+    if (c < 5) {
+      c += 1;
+    }
+  }
+
+  playGame();
+}
+
+/**
  * Function to check the answer and replace submit button with play again button
  */
 function checkAnswer() {
@@ -281,6 +397,12 @@ function checkAnswer() {
   } else if (firstGameWord === animals[0][1]) {
     language = 0;
     theme = animals;
+  } else if (firstGameWord === nature[0][0]) {
+    language = 1;
+    theme = nature;
+  } else if (firstGameWord === nature[0][1]) {
+    language = 0;
+    theme = nature;
   }
 
   // Check if an ID is in the answerIds array and if so create an answerSquare variable and check if it's inner text matches the correct answer
