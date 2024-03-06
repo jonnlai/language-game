@@ -97,6 +97,7 @@ function playGame() {
           return;
         } else {
           event.target.append(selectedOption);
+          selectedOption.style.color = "inherit";
         }
       },
       // Passive event listener added to improve scrolling performance - https://medium.com/@Esakkimuthu/passive-event-listeners-5dbb1b011fb1
@@ -113,6 +114,7 @@ function playGame() {
       "touchstart",
       function () {
         selectedOption = this;
+        selectedOption.style.color = "orange";
       },
       { passive: false }
     );
@@ -288,14 +290,14 @@ function checkAnswer() {
         .getElementById(id)
         .querySelector("div").innerText;
       if (answerSquareOne === animals[y][x]) {
-        document.getElementById(id).style.backgroundColor = "lightgreen";
-        document.getElementById(idTwo).style.backgroundColor = "lightgreen";
+        document.getElementById(id).style.backgroundColor = "#adeaad";
+        document.getElementById(idTwo).style.color = "lightgreen";
         document.getElementById(idTwo).innerHTML = correctIcon;
         correctCount += 1;
         y += 1;
       } else {
-        document.getElementById(id).style.backgroundColor = "#ff2800";
-        document.getElementById(idTwo).style.backgroundColor = "#ff2800";
+        document.getElementById(id).style.backgroundColor = "#ea5757";
+        document.getElementById(idTwo).style.color = "#ff2800";
         document.getElementById(idTwo).innerHTML = incorrectIcon;
         incorrectCount += 1;
         y += 1;
