@@ -9,18 +9,17 @@
 body {
   text-align: center;
   /* Photo by Janko Ferlic: https://www.pexels.com/photo/light-inside-library-590493/ */
-  background: url("../images/book-shelves.jpg") no-repeat center center/cover;
+  /* background: url("../images/book-shelves.jpg") no-repeat center center/cover; */
 }
 
 main {
   font-family: "Raleway", sans-serif;
-  padding-top: 20px;
   /*Photo by <a href="/photographer/fresh-m-44134">fresh-m</a> on <a href="/">Freeimages.com</a>*/
-  background: url("../images/notepad-1000px.png") no-repeat;
+  background: url("../images/notepad-long-750px.png") no-repeat;
   background-size: cover;
-  /* height: 100vh; */
-  max-height: 950px;
-  padding: 120px 10px;
+  height: 100vh;
+  padding: 30px 10px;
+  margin-top: 20px;
 }
 
 h1 {
@@ -130,7 +129,11 @@ button:hover {
 }
 
 @media screen and (min-width: 750px) {
+  body {
+    background: url("../images/book-shelves.jpg") no-repeat center center/cover;
+  }
   main {
+    background: url("../images/notepad-1000px.png") no-repeat;
     background-size: contain;
     padding-top: 70px;
     margin: 10px auto;
