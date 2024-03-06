@@ -129,8 +129,11 @@ function playGame() {
     options[option].addEventListener(
       "touchstart",
       function () {
+        for (let div in options) {
+          options[div].style.color = "inherit";
+        }
         selectedOption = this;
-        selectedOption.style.color = "orange";
+        selectedOption.style.color = "#72aaca";
       },
       { passive: false }
     );
