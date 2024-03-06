@@ -18,7 +18,8 @@ main {
   /*Photo by <a href="/photographer/fresh-m-44134">fresh-m</a> on <a href="/">Freeimages.com</a>*/
   background: url("../images/notepad-1000px.png") no-repeat;
   background-size: cover;
-  height: 100vh;
+  /* height: 100vh; */
+  max-height: 950px;
   padding: 120px 10px;
 }
 
@@ -27,9 +28,18 @@ h1 {
   font-family: "Indie Flower", cursive;
 }
 
+label {
+  font-family: "Indie Flower", cursive;
+  font-weight: bold;
+  font-size: larger;
+  width: 100px;
+  display: inline-block;
+}
+
 select {
   padding: 5px;
   font-family: "Raleway", sans-serif;
+  width: 142px;
 }
 
 #info-area {
@@ -84,7 +94,7 @@ and https://developer.mozilla.org/en-US/docs/Web/CSS/grid*/
 }
 
 #options-area > div {
-  background-color: wheat;
+  background-color: #f5deb3;
   border: 1px solid #000;
   border-radius: 2px;
   margin: 5px 10px 5px 0;
@@ -110,7 +120,8 @@ button {
   padding: 10px;
   border-radius: 5px;
   font-weight: bold;
-  font-family: "Raleway", sans-serif;
+  font-family: "Indie Flower", cursive;
+  font-size: 20px;
 }
 
 button:hover {
@@ -118,7 +129,7 @@ button:hover {
   cursor: pointer;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 750px) {
   main {
     background-size: contain;
     padding-top: 70px;
@@ -139,6 +150,18 @@ button:hover {
     display: flex;
     justify-content: center;
     gap: 50px;
+  }
+
+  #buttons {
+    align-self: center;
+  }
+
+  #buttons #submit-answer {
+    margin-top: 10px;
+  }
+
+  #buttons #play-again {
+    margin: 0;
   }
 }
 

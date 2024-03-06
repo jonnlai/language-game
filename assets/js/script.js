@@ -129,9 +129,11 @@ function playGame() {
     options[option].addEventListener(
       "touchstart",
       function () {
+        // Return any already tapped option divs back the default color
         for (let div in options) {
           options[div].style.color = "inherit";
         }
+        // Select the tapped option and change its color to indicate that it has been selected
         selectedOption = this;
         selectedOption.style.color = "#72aaca";
       },
@@ -419,7 +421,7 @@ function checkAnswer() {
         .querySelector("div").innerText;
       if (answerSquare === theme[y][language]) {
         document.getElementById(id).style.backgroundColor = "#adeaad";
-        document.getElementById(idTwo).style.color = "lightgreen";
+        document.getElementById(idTwo).style.color = "green";
         document.getElementById(idTwo).innerHTML = correctIcon;
         correctCount += 1;
         y += 1;
