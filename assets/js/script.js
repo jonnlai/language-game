@@ -15,6 +15,7 @@ const animals = [
  * How to use a for loop to create a grid was taken from: https://github.com/ImKennyYip/slide-puzzle/blob/master/puzzle.js
  */
 function loadGame() {
+  document.getElementById("play-area").style.display = "flex";
   document.getElementById("play-button").style.display = "none";
   document.getElementById("selection-area").style.display = "none";
   document.getElementById("info-area").style.display = "none";

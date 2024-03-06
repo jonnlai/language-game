@@ -6,15 +6,19 @@
 
 body {
   text-align: center;
-  margin-top: 30px;
-  background-color: rgb(247, 237, 222);
 }
 
 main {
-  max-width: 500px;
-  margin: 20px auto;
-  padding: 10px;
-  background-color: rgb(247, 237, 222);
+  padding-top: 20px;
+  /*Photo by <a href="/photographer/fresh-m-44134">fresh-m</a> on <a href="/">Freeimages.com</a>*/
+  background: url("../images/notepad-1000px.png") no-repeat;
+  background-size: cover;
+  height: 100vh;
+  padding: 120px 10px;
+}
+
+h1 {
+  margin: 40px 0 20px;
 }
 
 select {
@@ -25,10 +29,15 @@ select {
   margin: 0 10px 30px;
 }
 
+.hidden {
+  display: none;
+}
+
 #play-area {
   max-width: 320px;
   margin: 0 auto;
-  display: flex;
+  /* Set play-area to display: none to remove the extra space from below the "Play" button before the player clicks Play */
+  display: none;
 }
 
 /* W3Schools and MDN Wed docs were consulted on how to create a grid and how to use grid templates: https://www.w3schools.com/css/css_grid_container.asp 
@@ -56,7 +65,7 @@ and https://developer.mozilla.org/en-US/docs/Web/CSS/grid*/
 
 /* How to use CSS wildcard selector taken from: https://www.geeksforgeeks.org/wildcard-selectors-and-in-css-for-classes/#starts-with-wildcard-selector*/
 #answers-area > [id^="2-"] {
-  background-color: rgb(247, 237, 222);
+  background-color: transparent;
   border: none;
 }
 
@@ -74,6 +83,9 @@ and https://developer.mozilla.org/en-US/docs/Web/CSS/grid*/
   margin: 5px 10px 5px 0;
   height: 30px;
   padding: 5px;
+}
+
+[draggable="true"] {
   cursor: pointer;
 }
 
@@ -87,7 +99,7 @@ and https://developer.mozilla.org/en-US/docs/Web/CSS/grid*/
 }
 
 button {
-  margin: 30px auto 0 auto;
+  margin: 20px auto 0 auto;
   padding: 10px;
   border-radius: 5px;
   font-weight: bold;
@@ -95,9 +107,30 @@ button {
 
 @media screen and (min-width: 600px) {
   main {
-    border: 1px solid black;
-    border-radius: 5px;
-    background-color: rgb(247, 237, 222);
-    padding: 30px 10px;
+    background-size: contain;
+    padding-top: 70px;
+    margin: 10px auto;
+    width: 750px;
+    height: 600px;
+  }
+
+  .hidden {
+    display: block;
+  }
+
+  #count-and-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+  }
+
+  #buttons {
+    align-self: top;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  main {
+    margin: 5vw auto;
   }
 }
