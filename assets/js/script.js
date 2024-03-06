@@ -271,13 +271,16 @@ function checkAnswer() {
   let incorrectAnswers = document.createElement("span");
 
   // Check which game the player is playing by checking the inner text of the first game square (0-0)
-  // Assign the value 1 to X if the first word is in English and 0 if the first word is in Finnish
+  // Assign the value 1 to language variable if the first word is in English and 0 if the first word is in Finnish
   const firstGameWord = document.getElementById("0-0").innerText;
-  let x;
+  let language;
+  let theme;
   if (firstGameWord === animals[0][0]) {
-    x = 1;
+    language = 1;
+    theme = animals;
   } else if (firstGameWord === animals[0][1]) {
-    x = 0;
+    language = 0;
+    theme = animals;
   }
 
   // Check if an ID is in the answerIds array and if so create an answerSquare variable and check if it's inner text matches the correct answer
@@ -286,10 +289,10 @@ function checkAnswer() {
     let id = "1-" + y;
     let idTwo = "2-" + y;
     if (answerIds.includes(id)) {
-      let answerSquareOne = document
+      let answerSquare = document
         .getElementById(id)
         .querySelector("div").innerText;
-      if (answerSquareOne === animals[y][x]) {
+      if (answerSquare === theme[y][language]) {
         document.getElementById(id).style.backgroundColor = "#adeaad";
         document.getElementById(idTwo).style.color = "lightgreen";
         document.getElementById(idTwo).innerHTML = correctIcon;
