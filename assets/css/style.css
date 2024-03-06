@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +8,7 @@
 
 body {
   text-align: center;
+  background: url("../images/book-shelves.jpg") no-repeat center center/cover;
 }
 
 main {
@@ -15,10 +18,12 @@ main {
   background-size: cover;
   height: 100vh;
   padding: 120px 10px;
+  font-family: "Raleway", sans-serif;
 }
 
 h1 {
-  margin: 40px 0 20px;
+  margin: 40px 0 10px;
+  font-family: "Indie Flower", cursive;
 }
 
 select {
@@ -114,6 +119,10 @@ button {
     height: 600px;
   }
 
+  #info-area {
+    padding: 0 40px;
+  }
+
   .hidden {
     display: block;
   }
@@ -122,10 +131,6 @@ button {
     display: flex;
     justify-content: center;
     gap: 50px;
-  }
-
-  #buttons {
-    align-self: top;
   }
 }
 
