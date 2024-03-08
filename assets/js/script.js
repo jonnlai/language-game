@@ -88,6 +88,7 @@ function playGame() {
   document.getElementById("buttons").append(submitBtn);
 
   let selectedOption;
+  console.log(selectedOption);
   // How to convert NodeList to Array taken from https://www.geeksforgeeks.org/fastest-way-to-convert-javascript-nodelist-to-array/
   // How to use Javascript wildcard was taken from: https://www.js-craft.io/blog/javascript-use-queryselectorall-with-wildcards/
   const dropZones = Array.from(document.querySelectorAll("[id^='1-']"));
@@ -109,14 +110,17 @@ function playGame() {
     dropZones[dropZone].addEventListener(
       "touchstart",
       function (event) {
-        if (event.target.hasChildNodes()) {
+        // Prevent the user being able to select the dropzone before selecting an option
+        if (selectedOption === undefined) {
+          return;
+        } else if (event.target.hasChildNodes()) {
           return;
         } else {
           event.target.append(selectedOption);
           selectedOption.style.color = "inherit";
         }
       },
-      // Passive event listener added to improve scrolling performance - https://medium.com/@Esakkimuthu/passive-event-listeners-5dbb1b011fb1
+      // Passive event listener added to make the page more responsive - https://medium.com/@Esakkimuthu/passive-event-listeners-5dbb1b011fb1
       { passive: false }
     );
   }
@@ -136,6 +140,7 @@ function playGame() {
         // Select the tapped option and change its color to indicate that it has been selected
         selectedOption = this;
         selectedOption.style.color = "#72aaca";
+        console.log(selectedOption);
       },
       { passive: false }
     );
