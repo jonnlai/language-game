@@ -1,25 +1,24 @@
+/* Import Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
+/* Remove default styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  text-align: center;
-  /* Photo by Janko Ferlic: https://www.pexels.com/photo/light-inside-library-590493/ */
-  /* background: url("../images/book-shelves.jpg") no-repeat center center/cover; */
-}
-
+/* The main game area */
 main {
+  text-align: center;
   font-family: "Raleway", sans-serif;
+  /* Back-up background colour in case of issues loading the background image */
+  background-color: #f5deb3;
   /*Photo by <a href="/photographer/fresh-m-44134">fresh-m</a> on <a href="/">Freeimages.com</a>*/
   background: url("../images/notepad-long-750px.png") no-repeat;
   background-size: cover;
-  height: 100vh;
+  height: 100dvh;
   padding: 30px 10px;
-  margin-top: 20px;
 }
 
 h1 {
@@ -27,6 +26,7 @@ h1 {
   font-family: "Indie Flower", cursive;
 }
 
+/* Language and theme selection */
 label {
   font-family: "Indie Flower", cursive;
   font-weight: bold;
@@ -41,21 +41,25 @@ select {
   width: 142px;
 }
 
+/* Information about how to play the game */
 #info-area {
   margin: 0 10px 30px;
 }
 
+/* Hide information about using a mouse when using a small device < 750px to save space on the screen */
 .hidden {
   display: none;
 }
 
+/* Game play area */
 #play-area {
   max-width: 320px;
   margin: 0 auto;
-  /* Set play-area to display: none to remove the extra space from below the "Play" button before the player clicks Play */
+  /* Set play-area to "display: none" to remove the extra space from below the "Play" button before the player clicks Play */
   display: none;
 }
 
+/* Area to display the words to be translated, user's answers ("drop-drop") and the correct/incorrect symbols */
 /* W3Schools and MDN Wed docs were consulted on how to create a grid and how to use grid templates: https://www.w3schools.com/css/css_grid_container.asp 
 and https://developer.mozilla.org/en-US/docs/Web/CSS/grid*/
 #answers-area {
@@ -79,12 +83,14 @@ and https://developer.mozilla.org/en-US/docs/Web/CSS/grid*/
   background-color: aliceblue;
 }
 
+/* Correct/incorrect symbols */
 /* How to use CSS wildcard selector taken from: https://www.geeksforgeeks.org/wildcard-selectors-and-in-css-for-classes/#starts-with-wildcard-selector*/
 #answers-area > [id^="2-"] {
   background-color: transparent;
   border: none;
 }
 
+/* Answer options that the user selects their answers from */
 #options-area {
   display: grid;
   grid-template-columns: 90px;
@@ -101,10 +107,12 @@ and https://developer.mozilla.org/en-US/docs/Web/CSS/grid*/
   padding: 5px;
 }
 
+/* Indicate draggable options by changing the cursor to pointer */
 [draggable="true"] {
   cursor: pointer;
 }
 
+/* Count of the correct and incorrect answers */
 #answer-count {
   margin: 10px 5px;
 }
@@ -114,6 +122,7 @@ and https://developer.mozilla.org/en-US/docs/Web/CSS/grid*/
   font-weight: bold;
 }
 
+/* Buttons */
 button {
   margin: 20px auto 0 auto;
   padding: 10px;
@@ -128,15 +137,26 @@ button:hover {
   cursor: pointer;
 }
 
+/* Make the responsive when using a screen wider than 450px */
+@media screen and (min-width: 450px) {
+  main {
+    padding-top: 70px;
+  }
+}
+
+/* Make the page responsive when using a screen wider than 750px */
 @media screen and (min-width: 750px) {
+  /* Add bg image to the body */
   body {
     background: url("../images/book-shelves.jpg") no-repeat center center/cover;
   }
+
+  /* Main game area */
   main {
+    /* Replace the main bg image with a wider image */
     background: url("../images/notepad-1000px.png") no-repeat;
     background-size: contain;
-    padding-top: 70px;
-    margin: 10px auto;
+    margin: 20px auto;
     width: 750px;
     height: 600px;
   }
@@ -145,6 +165,7 @@ button:hover {
     padding: 0 40px;
   }
 
+  /* Display the hidden information about how to play when using a mouse */
   .hidden {
     display: block;
   }
@@ -163,11 +184,13 @@ button:hover {
     margin-top: 10px;
   }
 
+  /* Remove all margin from the play again button */
   #buttons #play-again {
     margin: 0;
   }
 }
 
+/* Make the page responsive when using a device wider than 1400px*/
 @media screen and (min-width: 1400px) {
   main {
     margin: 5vw auto;

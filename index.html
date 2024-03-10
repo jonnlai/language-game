@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
+    <!-- Main game area -->
     <main>
       <h1>Vocabulary Booster</h1>
       <div id="info-area">
@@ -17,13 +18,13 @@
         <br />
         <strong>Touch screen: </strong>Match the words by tapping first your
         selected option and then one of the empty answer squares.
-
+        <!-- Information for users who might be using a mouse i.e. use a larger device -->
         <div class="hidden">
           <br /><strong>Mouse: </strong>Click on your selected option and drag
           and drop it to one of the empty answer squares.
         </div>
-        <!-- <br /><br />Select your prefered language combination and theme, and click "Play"! -->
       </div>
+      <!-- Select languages and a theme -->
       <form id="selection-area" action="">
         <div id="select-mode">
           <label for="mode">Game mode:</label>
@@ -41,6 +42,7 @@
           </select>
         </div>
       </form>
+      <!-- Play button -->
       <button id="play-button" onclick="loadGame()">Play!</button>
 
       <!-- Play area -->
@@ -60,6 +62,7 @@
       src="https://kit.fontawesome.com/e56b74d13c.js"
       crossorigin="anonymous"
     ></script>
+    <!-- Javascript -->
     <script src="assets/js/script.js"></script>
   </body>
 </html>
