@@ -117,10 +117,11 @@ function playGame() {
           return;
         } else {
           event.target.append(selectedOption);
-          selectedOption.style.color = "inherit";
+          selectedOption.style.fontWeight = "inherit";
         }
       },
-      // Passive event listener added to make the page more responsive - https://medium.com/@Esakkimuthu/passive-event-listeners-5dbb1b011fb1
+      /* Passive event listener added to make the page more responsive - https://medium.com/@Esakkimuthu/passive-event-listeners-5dbb1b011fb1 
+      and https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#using_passive_listeners */
       { passive: true }
     );
   }
@@ -135,11 +136,11 @@ function playGame() {
       function () {
         // Return any already tapped option divs back the default color
         for (let div in options) {
-          options[div].style.color = "inherit";
+          options[div].style.fontWeight = "inherit";
         }
         // Select the tapped option and change its color to indicate that it has been selected
         selectedOption = this;
-        selectedOption.style.color = "#72aaca";
+        selectedOption.style.fontWeight = "bold";
         console.log(selectedOption);
       },
       { passive: true }

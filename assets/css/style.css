@@ -80,7 +80,7 @@ and https://developer.mozilla.org/en-US/docs/Web/CSS/grid*/
 /* Style the drop zone squares using the class .drop-zone created in script.js*/
 #answers-area .drop-zone {
   border: 1px dashed #000;
-  background-color: aliceblue;
+  background-color: #f0f8ff;
 }
 
 /* Correct/incorrect symbols */
