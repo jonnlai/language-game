@@ -15,7 +15,7 @@ main {
   /* Back-up background colour in case of issues loading the background image */
   background-color: #f5deb3;
   /*Photo by <a href="/photographer/fresh-m-44134">fresh-m</a> on <a href="/">Freeimages.com</a>*/
-  background: url("../images/notepad-long-750px.png") no-repeat;
+  background: url("../images/notepad-long-optimized.webp") no-repeat;
   background-size: cover;
   height: 100dvh;
   padding: 30px 10px;
@@ -148,13 +148,14 @@ button:hover {
 @media screen and (min-width: 750px) {
   /* Add bg image to the body */
   body {
-    background: url("../images/book-shelves.jpg") no-repeat center center/cover;
+    background: url("../images/book-shelves-optimized.webp") no-repeat center
+      center/cover;
   }
 
   /* Main game area */
   main {
     /* Replace the main bg image with a wider image */
-    background: url("../images/notepad-1000px.png") no-repeat;
+    background: url("../images/notepad-optimized.webp") no-repeat;
     background-size: contain;
     margin: 20px auto;
     width: 750px;

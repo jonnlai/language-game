@@ -74,89 +74,6 @@ function selectGame() {
 }
 
 /**
- * Allow the user to move their selected option next to the correct word
- * How to use drag and drop event listeners was taken from: https://github.com/ImKennyYip/slide-puzzle/blob/master/puzzle.js
- * and https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/drag_event
- * and Darwin Tech JavaScript Drag and Drop Youtube tutorial: https://www.youtube.com/watch?v=_G8G1OrEOrI
- */
-function playGame() {
-  // Add submit button
-  const submitBtn = document.createElement("button");
-  submitBtn.innerText = "Submit";
-  submitBtn.id = "submit-answer";
-  submitBtn.addEventListener("click", checkAnswer);
-  document.getElementById("buttons").append(submitBtn);
-
-  let selectedOption;
-  console.log(selectedOption);
-  // How to convert NodeList to Array taken from https://www.geeksforgeeks.org/fastest-way-to-convert-javascript-nodelist-to-array/
-  // How to use Javascript wildcard was taken from: https://www.js-craft.io/blog/javascript-use-queryselectorall-with-wildcards/
-  const dropZones = Array.from(document.querySelectorAll("[id^='1-']"));
-  for (let dropZone in dropZones) {
-    // Add "drop-zone" class to all the dropZone div elements to make it easier to style them
-    dropZones[dropZone].classList.add("drop-zone");
-    dropZones[dropZone].addEventListener("dragover", function (event) {
-      event.preventDefault();
-    });
-    dropZones[dropZone].addEventListener("drop", function (event) {
-      event.preventDefault();
-      // Check if the dropzone target already has a div inside it to prevent two options being put inside the same dropzone element
-      if (event.target.hasChildNodes()) {
-        return;
-      } else {
-        event.target.append(selectedOption);
-      }
-    });
-    dropZones[dropZone].addEventListener(
-      "touchstart",
-      function (event) {
-        // Prevent the user being able to select the dropzone before selecting an option
-        if (selectedOption === undefined) {
-          return;
-        } else if (event.target.hasChildNodes()) {
-          return;
-        } else {
-          event.target.append(selectedOption);
-          selectedOption.style.fontWeight = "inherit";
-        }
-      },
-      /* Passive event listener added to make the page more responsive - https://medium.com/@Esakkimuthu/passive-event-listeners-5dbb1b011fb1 
-      and https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#using_passive_listeners */
-      { passive: true }
-    );
-  }
-
-  const options = Array.from(document.querySelectorAll("[id^='option-']"));
-  for (let option in options) {
-    options[option].addEventListener("dragstart", function () {
-      selectedOption = this;
-    });
-    options[option].addEventListener(
-      "touchstart",
-      function () {
-        // Return any already tapped option divs back the default color
-        for (let div in options) {
-          options[div].style.fontWeight = "inherit";
-        }
-        // Select the tapped option and change its color to indicate that it has been selected
-        selectedOption = this;
-        selectedOption.style.fontWeight = "bold";
-        console.log(selectedOption);
-      },
-      { passive: true }
-    );
-  }
-
-  const optionsArea = document.getElementById("options-area");
-  optionsArea.addEventListener("dragover", function (event) {
-    event.preventDefault();
-  });
-  optionsArea.addEventListener("drop", function () {
-    optionsArea.append(selectedOption);
-  });
-}
-
-/**
  * Display English to Finnish animal names game
  */
 function displayEngFinAnimals() {
@@ -357,6 +274,95 @@ function displayFinEngNature() {
 }
 
 /**
+ * Allow the user to play the game by moving their selected option next to the correct word
+ * How to use drag and drop event listeners was taken from: https://github.com/ImKennyYip/slide-puzzle/blob/master/puzzle.js
+ * and https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/drag_event
+ * and Darwin Tech JavaScript Drag and Drop Youtube tutorial: https://www.youtube.com/watch?v=_G8G1OrEOrI
+ */
+function playGame() {
+  // Add submit button
+  const submitBtn = document.createElement("button");
+  submitBtn.innerText = "Submit";
+  submitBtn.id = "submit-answer";
+  submitBtn.addEventListener("click", checkAnswer);
+  document.getElementById("buttons").append(submitBtn);
+
+  let selectedOption;
+
+  // Add event listeners to the six available options
+  const options = Array.from(document.querySelectorAll("[id^='option-']"));
+  for (let option in options) {
+    // Add dragstart event listener to allow playing using a mouse
+    options[option].addEventListener("dragstart", function () {
+      selectedOption = this;
+    });
+    // Add touchstart event listener to allow playing using a touch screen device
+    options[option].addEventListener(
+      "touchstart",
+      function () {
+        // Return any already tapped option divs back the default font weight
+        for (let div in options) {
+          options[div].style.fontWeight = "inherit";
+        }
+        // Select the tapped option and change font weight to bold to indicate that it has been selected
+        selectedOption = this;
+        selectedOption.style.fontWeight = "bold";
+      },
+      /* Passive event listener added to make the page more responsive - https://medium.com/@Esakkimuthu/passive-event-listeners-5dbb1b011fb1 
+      and https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#using_passive_listeners */
+      { passive: true }
+    );
+  }
+
+  /* Select and add event listeners to all the dropzone squares
+  How to convert NodeList to Array taken from https://www.geeksforgeeks.org/fastest-way-to-convert-javascript-nodelist-to-array/
+  How to use Javascript wildcard was taken from: https://www.js-craft.io/blog/javascript-use-queryselectorall-with-wildcards/ */
+  const dropZones = Array.from(document.querySelectorAll("[id^='1-']"));
+  for (let dropZone in dropZones) {
+    // Add "drop-zone" class to all the dropZone div elements to make it easier to style them
+    dropZones[dropZone].classList.add("drop-zone");
+    // Add dragover and drop event listeners to allow playing using a mouse
+    dropZones[dropZone].addEventListener("dragover", function (event) {
+      event.preventDefault();
+    });
+    dropZones[dropZone].addEventListener("drop", function (event) {
+      event.preventDefault();
+      // Check if the dropzone target already has a div inside it to prevent two options being put inside the same dropzone element
+      if (event.target.hasChildNodes()) {
+        return;
+      } else {
+        event.target.append(selectedOption);
+      }
+    });
+    // Add touchstart event listener to allow playing using a touch screen device
+    dropZones[dropZone].addEventListener(
+      "touchstart",
+      function (event) {
+        // Prevent the user being able to select the dropzone before selecting an option
+        if (selectedOption === undefined) {
+          return;
+        } else if (event.target.hasChildNodes()) {
+          return;
+        } else {
+          event.target.append(selectedOption);
+          selectedOption.style.fontWeight = "inherit";
+        }
+      },
+      { passive: true }
+    );
+  }
+
+  // When using a mouse, allow users to return their selected option back to the options area
+  const optionsArea = document.getElementById("options-area");
+  optionsArea.addEventListener("dragover", function (event) {
+    event.preventDefault();
+  });
+  optionsArea.addEventListener("drop", function () {
+    optionsArea.append(selectedOption);
+  });
+}
+
+/**
  * Function to check the answer and replace submit button with play again button
  */
 function checkAnswer() {
@@ -374,7 +380,8 @@ function checkAnswer() {
   againBtn.addEventListener("click", playAgain);
   document.getElementById("buttons").append(againBtn);
 
-  //Check Answer
+  // Check Answer
+  // Select all the squares that could hold an answer i.e. all the dropzone squares
   const answerSquares = Array.from(document.querySelectorAll("[id^='1-']"));
   let answers = [];
   let answerIds = [];
@@ -398,7 +405,7 @@ function checkAnswer() {
   let incorrectAnswers = document.createElement("span");
 
   // Check which game the player is playing by checking the inner text of the first game square (0-0)
-  // Assign the value 1 to language variable if the first word is in English and 0 if the first word is in Finnish
+  // Assign the value 1 to language variable if the first word is in English (to indicate the answers are in Finnish) and 0 if the first word is in Finnish (answers are in English)
   const firstGameWord = document.getElementById("0-0").innerText;
   let language;
   let theme;
