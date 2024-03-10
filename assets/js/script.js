@@ -121,7 +121,7 @@ function playGame() {
         }
       },
       // Passive event listener added to make the page more responsive - https://medium.com/@Esakkimuthu/passive-event-listeners-5dbb1b011fb1
-      { passive: false }
+      { passive: true }
     );
   }
 
@@ -142,7 +142,7 @@ function playGame() {
         selectedOption.style.color = "#72aaca";
         console.log(selectedOption);
       },
-      { passive: false }
+      { passive: true }
     );
   }
 
