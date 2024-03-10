@@ -1,6 +1,6 @@
 # Vocabulary Booster
 
-Vocabulary Booster is an online language learning game that allows users to improve their vocabulary by playing a fun game.
+Vocabulary Booster is an online language learning game that allows users to improve their Finnish and English vocabulary by playing a fun game.
 
 The purpose of this project is to help those who are learning Finnish or English to increase their vocabulary and encourage others to take up language learning by offering fun, easy and engaging way to start learning a new language.
 
@@ -10,23 +10,68 @@ The deployed project can be found here: [Vocabulary Booster](https://jonnlai.git
 
 ### Business Goals
 
-- The website promotes language learning by providing an easy way to start learning a new language
-- The website allows its users to boost their vocabulary
+- The website promotes language learning by providing an easy way to start learning a new language.
+- The website allows its users to boost their vocabulary.
 
 ### User stories
 
-- As a new language learner, I want an easy way to improve my vocabulary
-- As someone who has been learning their target language for some time already, I want to be able to challenge myself
+- As a new language learner, I want an easy way to improve my vocabulary.
+- As a language learner, I want a fun and engaging way to learn.
+- As someone who has been learning their target language for some time already, I want to be able to challenge myself.
+
+### Colour Palette
+
+The colour palette was created using the Coolors colour palette generator.
+
+![Colour Palette](readme-files/vocab-booster.png)
+
+### Typography
+
+The main font used is Raleway, with sans serif as the fallback font. Indie Flower was used for the main heading (h1), buttons and labels, with cursive as the fallback. Indie Flower was used to give some elements of the page a hand-written feel.
 
 ### Wireframe
 
 [Balsamiq](https://balsamiq.com/) User Interface wireframing tool was used to design the structure of the website.
 
-| Feature         | Mobile                                                   |
-| --------------- | -------------------------------------------------------- |
-| Drag and Drop   | ![Drag and drop](readme-files/wireframes/mobile-1.png)   |
-| Extra challenge | ![Extra challenge](readme-files/wireframes/mobile-2.png) |
-| Reveal answer   | ![Reveal answer](readme-files/wireframes/mobile-3.png)   |
+| Feature             | Mobile                                                   |
+| ------------------- | -------------------------------------------------------- |
+| Drag and Drop       | ![Drag and drop](readme-files/wireframes/mobile-1.png)   |
+| All answers correct | ![Extra challenge](readme-files/wireframes/mobile-2.png) |
+| Reveal answer       | ![Reveal answer](readme-files/wireframes/mobile-3.png)   |
+
+[Back to top](#vocabulary-booster)
+
+## Features
+
+### General
+
+- The project was developed using a "mobile first" development approach to ensure good User Experience for those using mobile phones and other smaller devices.
+- The site is fully responsive across all device sizes.
+- Consistant style, including colours and fonts, were used across all the pages.
+
+### Favicon
+
+- The Favicon is an emoji of three books piled on top of another to represent learning and studying.
+
+![Favicon](readme-files/wireframes/favicon.png)
+
+### Notebook background
+
+| Mobile                                                                  | Desktop                                                       |
+| ----------------------------------------------------------------------- | ------------------------------------------------------------- |
+| ![Notebook Background Long](readme-files/features/notebook-bg-long.png) | ![Notebook Background](readme-files/features/notebook-bg.png) |
+
+### Body background
+
+![Body Background](readme-files/features/body-bg.png)
+
+### Instructions
+
+### Select the game
+
+### Game
+
+### Check the answer
 
 [Back to top](#vocabulary-booster)
 
@@ -50,3 +95,29 @@ The project was deployed to GitHub pages by taking the following steps:
 6. Under **Deployment**, select 'github-pages' and click the link under **Active Deployments**.
 
 [Back to top](#vocabulary-booster)
+
+## Finished Product
+
+### Game Introduction
+
+| Mobile                                                          | Desktop                                                           |
+| --------------------------------------------------------------- | ----------------------------------------------------------------- |
+| ![Mobile intro](readme-files/finished-product/mobile-first.png) | ![Desktop intro](readme-files/finished-product/desktop-first.png) |
+
+### Game Page
+
+| Mobile                                                               | Desktop                                                                |
+| -------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| ![Mobile game page](readme-files/finished-product/mobile-second.png) | ![Desktop game page](readme-files/finished-product/desktop-second.png) |
+
+### Playing the game
+
+| Mobile                                                                   | Desktop                                                                                               |
+| ------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------- |
+| ![Mobile select option](readme-files/finished-product/mobile-select.png) | <video controls src="readme-files/finished-product/drag-and-drop.mp4" title="Demo-drag-drop"></video> |
+
+### Checking the answer
+
+| Mobile                                                                       | Desktop                                                                        |
+| ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| ![Mobile check the answer](readme-files/finished-product/mobile-answers.png) | ![Desktop check the answer](readme-files/finished-product/desktop-answers.png) |
