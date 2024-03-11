@@ -153,6 +153,104 @@ The correct and incorrect answers are counted and the player given a message to 
 
 [Back to top](#vocabulary-booster)
 
+## Testing
+
+### User Stories Testing
+
+1. As a new language learner, I want an easy way to improve my vocabulary.
+
+   - The game allows the user choose whether they want to translate from Finnish or English, and let's the user to practise as long as needed.
+
+2. As a language learner, I want a fun and engaging way to learn.
+
+   - The game is easy to navigate and use, and has fun but professional feel to it.
+
+3. As someone who has been learning their target language for some time already, I want to be able to challenge myself.
+   - The game let's the user to select different themes so that they can challenge themselves and continue expanding their vocabulary.
+
+### Code Validation
+
+- The [W3C Markup Validator](https://validator.w3.org/), [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) and [JSHint](https://jshint.com/) were used to validate the code to ensure that the project meets the current Web Standards and is free from any unintended syntax errors and mistakes that could cause issues with accessibilty and usability.
+
+- W3C Markup Validator:
+
+  - highlighted that the form element's action attribute was empty. The action attribute was removed to resolve this issue as the form is not being used to send data.
+  - highlighted several times that the trailing slash on void elements had no effect. However, these were not removed as they had been added by Prettier when the code had been formatted.
+    ![W3C Validator error](readme-files/testing/W3C-error.png)
+
+- W3C CSS Validator highlighted no issues.
+  ![CSS validator](readme-files/testing/css-validator.png)
+
+- JSHint:
+
+  - highlighted that "b" variable had not been defined. This was fixed by adding the "let" keyword to declare the variable
+
+  ![Undefined variable](readme-files/testing/JSHint-undefined-var.png)
+
+  - highlighted that "loadGame" was unused. However, this function is being called from index.html and therefore, this warning was ignored.
+  - gave warnings below. These don't impact the current functionality of the page so these warnings were ignored.
+
+  ![Warnings One](readme-files/testing/JSHint-warnings-one.png) ![Warnings Two](readme-files/testing/JSHint-warnings-two.png) ![Warnings Three](readme-files/testing/JSHint-warnings-three.png)
+
+### Manual Testing
+
+#### Browser compatibility
+
+The website was tested on the following browsers:
+
+- Google Chrome - no issues identified.
+- Mozilla Firefox - The Game Mode label was displayed over two lines. The label length was increased by 5px to resolve this issue.
+- Microsoft Edge - no issues identified.
+- Samsung Internet (tablet) - no issues identified.
+
+#### Device compatibility
+
+The website was tested on the following devices:
+
+- Sony Xperia 10 III - no issues identified.
+- Samsung Galaxy A52s - no issues identified.
+- Lenovo Yoga s730 - no issues identified.
+- Sony VAIO 15" - no issues identified.
+- Dell P2419H 24" screen - no issues identified.
+- Samsung Galaxy Tab S4 - no issues identified.
+
+#### Common Elements Testing
+
+- **Dropdown menus:** Dropmenus menus work correctly allowing the user to choose their desired language combination and theme.
+- **Play button:** When clicked or tapped, the play button starts the game correctly by displaying the selected game.
+- **Drag and Drop:** When using a mouse, the drag and drop function works correctly allowing an option to be selected, dragged to the desired dropzone and dropped there. The function allows the position of an option to be changed if needed.
+- **Tap to select an option:** When using a touch screen device, an option can be selected by tapping it. The selected option's font weight becomes bold to indicate that it has been selected.
+- **Tap to drop an option:** When using a touch screen device, the selected option can be "dropped" by tapping the desired dropzone. The option's font weight returns back to normal. The option can be selected and moved again if needed.
+- **Submit button:** The Submit button checks the answer and displays correct answers in green and incorrect ones in red. The number of correct answers when using a device wider than 350px or longer than 600px.
+- **Play Again button:** The Play Again button is displayd correctly after Submit button has been clicked. Clicking the button reloads the page starting the game again.
+
+### Performance and Accessibility
+
+Chrome DevTool Lighthouse was used to assess the project's performance and accessibility. The reports confirmed that the page performs well and is accessible.
+
+![Lighthouse - mobile](readme-files/testing/lighthouse-mobile.png)
+![Lighthouse - desktop](readme-files/testing/lighthouse-desktop.png)
+
+### Responsiveness
+
+In addition to manual checks, responsiveness was tested further using [Chrome DevTools](https://developer.chrome.com/docs/devtools) and [Responsive Design Checker](https://www.responsivedesignchecker.com/). Media query was added to make the page more responsive by reducing the content and spacing when using a short and narrow device. This means the users of those devices don't need scroll when playing the play but can display the whole game on their screen. No other issues were identified.
+
+### Solved Bugs
+
+- A script src attribute had been incorrectly typed as "scr" which meant that the Javascript was not correctly linked. This was fixed early on.
+- Inside playGame() function, the dropZones variable was a NodeList and therefore, an error message was received when for...in loop was being used to iterate through it. The dropZones variable was converted to array resolve this issue.
+- Two options could be dropped in the same dropZone causing an error. This was solved adding an if statement to check whether the target element has a childNode already and if so, return without appending the selected option.
+- When using a touch screen device, it was possible to select one of the dropZone squares before selecting an option. This resulted in selectedOption being given the value of "undefined" and that being appended to the tapped dropZone square resulting in an error. This was solved by adding an if statement to check whether selectedOption has the value of undefined and if so return without appending the selected option.
+- Favicon did not display correct because the file path was incorrect. This was solved by assets/favicon to file path.
+- The answers count was taking up space before being displayed impacting the ability to center element correctly. This was solved by changing its display property to none in CSS until the checkAnswer() function is being called.
+- After submitting the answer, it was possible to move the options again. This was solved for when a mouse is being used by changing the draggable attributes value to false after Submit button has been clicked.
+
+### Unsolved Bugs
+
+- It is still possible to move the options after submitting the answer when using a touch screen device. This does not impact the score and therefore, this issue is being considered critical but it would beneficial to resolve this is in the future.
+
+[Back to top](#vocabulary-booster)
+
 ## Deployment
 
 This project was developed using VSCode, and the project was deployed to GitHub pages. The project was deployed in the early stages of the development process to allow the developer to test the site on different devices and identify and fix any issues.
@@ -190,14 +288,12 @@ The project was deployed to GitHub pages by taking the following steps:
 
 ### Playing the game
 
-| Mobile                                                                        | Desktop                                                           |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------- |
-| ![Select using touch screen](readme-files/finished-product/mobile-select.png) | ![Select using a mouse](readme-files/features/desktop-select.png) |
+| Mobile                                                                        | Desktop                                                                   |
+| ----------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| ![Select using touch screen](readme-files/finished-product/mobile-select.png) | ![Select using a mouse](readme-files/finished-product/desktop-select.png) |
 
 ### Checking the answer
 
 | Mobile                                                                       | Desktop                                                                        |
 | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
 | ![Mobile check the answer](readme-files/finished-product/mobile-answers.png) | ![Desktop check the answer](readme-files/finished-product/desktop-answers.png) |
-
-[def]: https://coolors.co/
