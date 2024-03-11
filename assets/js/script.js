@@ -95,7 +95,7 @@ function displayEngFinAnimals() {
   let translatedNames = [];
 
   // Create an array of random index numbers
-  b = 0;
+  let b = 0;
   while (b < 6) {
     let num = Math.floor(Math.random() * 8);
     if (randomIndex.includes(num)) {
@@ -145,7 +145,7 @@ function displayFinEngAnimals() {
   let translatedNames = [];
 
   // Create an array of random index numbers
-  b = 0;
+  let b = 0;
   while (b < 6) {
     let num = Math.floor(Math.random() * 8);
     if (randomIndex.includes(num)) {
@@ -195,7 +195,7 @@ function displayEngFinNature() {
   let translatedNames = [];
 
   // Create an array of random index numbers
-  b = 0;
+  let b = 0;
   while (b < 6) {
     let num = Math.floor(Math.random() * 8);
     if (randomIndex.includes(num)) {
@@ -245,7 +245,7 @@ function displayFinEngNature() {
   let translatedNames = [];
 
   // Create an array of random index numbers
-  b = 0;
+  let b = 0;
   while (b < 6) {
     let num = Math.floor(Math.random() * 8);
     if (randomIndex.includes(num)) {
