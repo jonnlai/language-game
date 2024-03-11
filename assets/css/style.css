@@ -22,7 +22,7 @@
 }
 
 h1 {
-  margin: 40px 0 10px;
+  margin: 30px 0 10px;
   font-family: "Indie Flower", cursive;
 }
 
@@ -114,13 +114,14 @@ and https://developer.mozilla.org/en-US/docs/Web/CSS/grid*/
 
 /* Count of the correct and incorrect answers */
 #answer-count {
-  margin: 10px 5px;
+  margin: 10px 5px 0 5px;
   display: none;
 }
 
 #answer-count > span {
   margin: 5px;
   font-weight: bold;
+  font-size: 14px;
 }
 
 /* Buttons */
@@ -136,6 +137,25 @@ button {
 button:hover {
   background-color: #cfc3bb;
   cursor: pointer;
+}
+
+@media screen and (max-height: 600px) {
+  #game-container {
+    padding: 10px;
+  }
+
+  h1 {
+    margin-bottom: 0;
+  }
+
+  #answer-count > span,
+  #answer-count > div {
+    display: none;
+  }
+
+  button {
+    margin-top: 10px;
+  }
 }
 
 /* Make the responsive when using a screen wider than 450px */
