@@ -133,6 +133,7 @@ The correct and incorrect answers are counted and the player given a message to 
 
 - [HTML5](https://html.com/html5/)
 - [CSS3](https://www.w3.org/Style/CSS/)
+- [Javascript](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript)
 
 ### Frameworks, Libraries and Programmes Used
 

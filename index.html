@@ -40,50 +40,52 @@
   <body>
     <!-- Main game area -->
     <main>
-      <h1>Vocabulary Booster</h1>
-      <div id="info-area">
-        Boost your Finnish or English vocabulary by playing this game! You will
-        be shown 8 words in your selected language and 6 words in your target
-        language - your goal is to match the words correctly!
-        <br />
-        <br />
-        <strong>Touch screen: </strong>Match the words by tapping first your
-        selected option and then one of the empty answer squares.
-        <!-- Information for users who might be using a mouse i.e. use a larger device -->
-        <div class="hidden">
-          <br /><strong>Mouse: </strong>Click on your selected option and drag
-          and drop it to one of the empty answer squares.
+      <div id="game-container">
+        <h1>Vocabulary Booster</h1>
+        <div id="info-area">
+          Boost your Finnish or English vocabulary by playing this game! You
+          will be shown 8 words in your selected language and 6 words in your
+          target language - your goal is to match the words correctly!
+          <br />
+          <br />
+          <strong>Touch screen: </strong>Match the words by tapping first your
+          selected option and then one of the empty answer squares.
+          <!-- Information for users who might be using a mouse i.e. use a larger device -->
+          <div class="hidden">
+            <br /><strong>Mouse: </strong>Click on your selected option and drag
+            and drop it to one of the empty answer squares.
+          </div>
         </div>
-      </div>
-      <!-- Select languages and a theme -->
-      <form id="selection-area" action="">
-        <div id="select-mode">
-          <label for="mode">Game mode:</label>
-          <select name="mode" id="mode" aria-label="select game mode">
-            <option value="eng-to-fin">English to Finnish</option>
-            <option value="fin-to-eng">Finnish to English</option>
-          </select>
+        <!-- Select languages and a theme -->
+        <form id="selection-area" action="">
+          <div id="select-mode">
+            <label for="mode">Game mode:</label>
+            <select name="mode" id="mode" aria-label="select game mode">
+              <option value="eng-to-fin">English to Finnish</option>
+              <option value="fin-to-eng">Finnish to English</option>
+            </select>
+          </div>
+          <br />
+          <div id="select-theme">
+            <label for="theme">Theme:</label>
+            <select name="theme" id="theme" aria-label="select theme">
+              <option value="animals">Animals</option>
+              <option value="nature">Nature</option>
+            </select>
+          </div>
+        </form>
+        <!-- Play button -->
+        <button id="play-button" onclick="loadGame()">Play!</button>
+        <!-- Play area -->
+        <div id="play-area">
+          <div id="answers-area"></div>
+          <div id="options-area"></div>
         </div>
-        <br />
-        <div id="select-theme">
-          <label for="theme">Theme:</label>
-          <select name="theme" id="theme" aria-label="select theme">
-            <option value="animals">Animals</option>
-            <option value="nature">Nature</option>
-          </select>
+        <!-- Answer count and buttons -->
+        <div id="count-and-buttons">
+          <div id="answer-count"></div>
+          <div id="buttons"></div>
         </div>
-      </form>
-      <!-- Play button -->
-      <button id="play-button" onclick="loadGame()">Play!</button>
-      <!-- Play area -->
-      <div id="play-area">
-        <div id="answers-area"></div>
-        <div id="options-area"></div>
-      </div>
-      <!-- Answer count and buttons -->
-      <div id="count-and-buttons">
-        <div id="answer-count"></div>
-        <div id="buttons"></div>
       </div>
     </main>
     <!-- Font Awesome kit -->

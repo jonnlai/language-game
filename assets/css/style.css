@@ -9,7 +9,7 @@
 }
 
 /* The main game area */
-main {
+#game-container {
   text-align: center;
   font-family: "Raleway", sans-serif;
   /* Back-up background colour in case of issues loading the background image */
@@ -17,7 +17,7 @@ main {
   /*Photo by <a href="/photographer/fresh-m-44134">fresh-m</a> on <a href="/">Freeimages.com</a>*/
   background: url("../images/notepad-long-optimized.webp") no-repeat;
   background-size: cover;
-  height: 100dvh;
+  height: 100vh;
   padding: 30px 10px;
 }
 
@@ -140,7 +140,7 @@ button:hover {
 
 /* Make the responsive when using a screen wider than 450px */
 @media screen and (min-width: 450px) {
-  main {
+  #game-container {
     padding-top: 70px;
   }
 }
@@ -153,12 +153,19 @@ button:hover {
       center/cover;
   }
 
-  /* Main game area */
   main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  /* Main game area */
+  #game-container {
     /* Replace the main bg image with a wider image */
     background: url("../images/notepad-optimized.webp") no-repeat;
     background-size: contain;
-    margin: 20px auto;
     width: 750px;
     height: 600px;
   }
@@ -189,12 +196,5 @@ button:hover {
   /* Remove all margin from the play again button */
   #buttons #play-again {
     margin: 0;
-  }
-}
-
-/* Make the page responsive when using a device wider than 1400px*/
-@media screen and (min-width: 1400px) {
-  main {
-    margin: 5vw auto;
   }
 }
