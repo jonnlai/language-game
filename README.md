@@ -1,5 +1,7 @@
 # Vocabulary Booster
 
+![Mockup image of the project](readme-files/mockup.png)
+
 Vocabulary Booster is an online language learning game that allows users to improve their Finnish and English vocabulary by playing a fun game.
 
 The purpose of this project is to help those who are learning Finnish or English to increase their vocabulary and encourage others to take up language learning by offering fun, easy and engaging way to start learning a new language.
@@ -111,9 +113,9 @@ The six answers are selected randomly from the eight options and are being displ
 
 If the player is using a touch screen device such as a mobile phone, first they tap the option they want to select and then they tap the square where they want the word to go. If they are using a mouse, they need to drag and drop the options to the correct blank squares.
 
-| Touch screen                                                                                    | Mouse                                                                                           |
-| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| <video controls src="readme-files/features/play-mobile.mp4" title="Play demo - mobile"></video> | <video controls src="readme-files/features/play-desktop.mp4" title="Play demo desktop"></video> |
+| Touch screen                                                      | Mouse                                                         |
+| ----------------------------------------------------------------- | ------------------------------------------------------------- |
+| ![Play using touch screen](readme-files/features/play-mobile.png) | ![Play using a mouse](readme-files/features/play-desktop.png) |
 
 ### Check the answer
 
@@ -188,9 +190,9 @@ The project was deployed to GitHub pages by taking the following steps:
 
 ### Playing the game
 
-| Mobile                                                                   | Desktop                                                                                               |
-| ------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------- |
-| ![Mobile select option](readme-files/finished-product/mobile-select.png) | <video controls src="readme-files/finished-product/drag-and-drop.mp4" title="Demo-drag-drop"></video> |
+| Mobile                                                                        | Desktop                                                           |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| ![Select using touch screen](readme-files/finished-product/mobile-select.png) | ![Select using a mouse](readme-files/features/desktop-select.png) |
 
 ### Checking the answer
 
