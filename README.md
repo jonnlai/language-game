@@ -8,6 +8,17 @@ The purpose of this project is to help those who are learning Finnish or English
 
 The deployed project can be found here: [Vocabulary Booster](https://jonnlai.github.io/language-game/)
 
+## Table of Content
+
+1. [User Experience (UX)](#user-experience-ux)
+2. [Features](#features)
+3. [Technologies Used](#technologies-used)
+4. [Testing](#testing)
+5. [Deployment](#deployment)
+6. [Finished Product](#finished-product)
+7. [Credits](#credits)
+8. [Features not implemented](#features-not-implemented)
+
 ## User Experience (UX)
 
 ### Business Goals
@@ -297,3 +308,51 @@ The project was deployed to GitHub pages by taking the following steps:
 | Mobile                                                                       | Desktop                                                                        |
 | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
 | ![Mobile check the answer](readme-files/finished-product/mobile-answers.png) | ![Desktop check the answer](readme-files/finished-product/desktop-answers.png) |
+
+[Back to top](#vocabulary-booster)
+
+## Credits
+
+### Content
+
+All the content was written by the developer.
+
+### Media
+
+#### Images
+
+- The notebook background: A photo by [Kamran Aydinov](https://www.freepik.com/free-photo/top-view-open-notepad_17020858.htm#query=notebook%20background&position=8&from_view=keyword&track=ais&uuid=7587716c-ed8d-47e3-9fe9-b9e3795a024b) on [Freepik](https://www.freepik.com/)
+  - Modified by the developer's partner to remove the background and to create a longer and narrower version of the image. (As permitted by Freepik's free license terms)
+- The library background: Image by [StockSnap](https://pixabay.com/users/stocksnap-894430/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2596809) from [Pixabay](https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2596809)
+
+#### Icons
+
+- All icons other than Favicon are from [Font Awesome](https://fontawesome.com/).
+
+#### Favicon
+
+- This favicon was generated using the following graphics from Twitter Twemoji:
+
+  - Graphics Title: 1f4da.svg
+  - Graphics Author: [Copyright 2020 Twitter, Inc and other contributors](https://github.com/twitter/twemoji)
+  - Graphics Source: [Graphics Source](https://github.com/twitter/twemoji/blob/master/assets/svg/1f4da.svg)
+  - Graphics License: [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+
+### Code
+
+- The idea to use a for loop to create a grid and how to use drag and drop event listeners were taken from [Slide-Puzzle](https://github.com/ImKennyYip/slide-puzzle/blob/master/puzzle.js)
+- To following resources were also consulted to create the drag and drop event listeners:
+  - [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/drag_event)
+  - [Darwin Tech JavaScript Drag and Drop Youtube tutorial](https://www.youtube.com/watch?v=_G8G1OrEOrI)
+- [W3Schools](https://www.w3schools.com/), [Stack Overflow](https://stackoverflow.com/) and [MDN Web Docs](https://developer.mozilla.org/en-US/) were regularly consulted for ideas and to ensure understanding.
+
+[Back to top](#vocabulary-booster)
+
+## Features not implemented
+
+The following features were considered during the development of this project, but it has not been possible to implement them yet.
+
+- **Display answer function** A function to display the correct answers after the user has submitted their answers if they did not get all of them correct.
+- **Challange function** A function to allow the user to write the translations of the two missing words as an extra challenge if they have matched all the six words correctly.
+- **Level 2 game** Instead of matching two words, this game requires the player to write the translation of each word without any prompts.
+- **Help pop up** A button that allows the user to open the instructions as a pop up window while they have the game open if they need to review the instructions again.
