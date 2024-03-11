@@ -139,7 +139,8 @@ button:hover {
   cursor: pointer;
 }
 
-@media screen and (max-height: 600px) {
+/* Make the game responsive when using a short and harrow device */
+@media screen and (max-height: 600px) and (max-width: 350px) {
   #game-container {
     padding: 10px;
   }
@@ -148,6 +149,7 @@ button:hover {
     margin-bottom: 0;
   }
 
+  /* Hide the answer count when using a very short device */
   #answer-count > span,
   #answer-count > div {
     display: none;
