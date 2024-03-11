@@ -21,7 +21,7 @@ The deployed project can be found here: [Vocabulary Booster](https://jonnlai.git
 
 ### Colour Palette
 
-The colour palette was created using the Coolors colour palette generator.
+The colour palette was created using the [Coolors](https://coolors.co/) colour palette generator. The first two colours (blue and wheat) are being used as the background colour of the squares that hold the words in different languages. Black is being used throughout the page for fonts and borders and last colour (#CFC3BB) is being used for buttons when they are being hovered over.
 
 ![Colour Palette](readme-files/vocab-booster.png)
 
@@ -57,21 +57,68 @@ The main font used is Raleway, with sans serif as the fallback font. Indie Flowe
 
 ### Notebook background
 
+The game and the instructions are displayed on a background image that looks like a notebook page. There are two versions of the notebook image: longer and narrower image for mobile devices and a wider images for larger screens.
+
 | Mobile                                                                  | Desktop                                                       |
 | ----------------------------------------------------------------------- | ------------------------------------------------------------- |
 | ![Notebook Background Long](readme-files/features/notebook-bg-long.png) | ![Notebook Background](readme-files/features/notebook-bg.png) |
 
 ### Body background
 
+When the game is being played using a tablet or a larger device, an image of book shelves in a dimly lit room is being displayed in the background. Together with the notebook image this gives the user a sense of relaxed and fun but high-quality study experience.
+
 ![Body Background](readme-files/features/body-bg.png)
+
+### Heading
+
+The heading gives the user the name of the game and is being dislayed on top of the "notebook page" throughout the game. A cursive font, Indie Flower, is being used to give a hand-written feel, as if someone had handwritten the game on the notebook.
+
+![Heading](readme-files/features/heading.png)
 
 ### Instructions
 
+The instructions on how to play the game are displayed when the page loads. The goal of the game is explained clearly as well as how to play using either a touch screen device or a mouse. When using a smaller device (<750px) instructions on how to play using a mouse are hidden to save space on smaller screens. When using a screen larger than 750px, all the instructions are displayed in case the user is larger touch screen device.
+
+| Mobile                                                                | Desktop                                                 |
+| --------------------------------------------------------------------- | ------------------------------------------------------- |
+| ![Mobile instructions](readme-files/features/mobile-instructions.png) | ![Instructions](readme-files/features/instructions.png) |
+
 ### Select the game
+
+The player chooses the mode (i.e. the language combination) and the theme using the two dropdown menus. After they have made their selection, the player clicks "Play" to start the game.
+
+| Selection area                                                                        | Select language                                        | Select theme                                      |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------- |
+| ![Select language combination and theme](readme-files/features/select-mode-theme.png) | ![Select language](readme-files/features/language.png) | ![Select theme](readme-files/features/themes.png) |
+
+### Buttons
+
+When hovered over, the buttons change colour to a darker shade to give the user feedback and indicate that they can be clicked.
+
+![Button](readme-files/features/btn.png) ![Button hovered](readme-files/features/btn-hovered.png)
 
 ### Game
 
+The eight words that need to be translated are displayed on the left on blue background. The six translated words are displayed on the right on wheat-coloured background. The "dropzones", the areas where the player needs to place the translated words, have dashed borders.
+
+| Game English - Finnish                         | Game Finnish - English                                 |
+| ---------------------------------------------- | ------------------------------------------------------ |
+| ![Game mode 1](readme-files/features/game.png) | ![Game mode 2](readme-files/features/game-fin-eng.png) |
+
+The six answers are selected randomly from the eight options and are being displayed in a random order to challenge the player each time they play.
+
+![Answers One](readme-files/features/answers-one.png) ![Answers Two](readme-files/features/answers-two.png) ![Answers Three](readme-files/features/answers-three.png)
+
+| Mobile                                                                                          | Desktop                                                                                         |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| <video controls src="readme-files/features/play-mobile.mp4" title="Play demo - mobile"></video> | <video controls src="readme-files/features/play-desktop.mp4" title="Play demo desktop"></video> |
+
 ### Check the answer
+
+When the player clicks "Submit"
+![Check the answer](readme-files/features/check-answer.png)
+
+![Answer Count](readme-files/features/answer-count.png) ![All correct](readme-files/features/all-correct.png)
 
 [Back to top](#vocabulary-booster)
 
@@ -121,3 +168,5 @@ The project was deployed to GitHub pages by taking the following steps:
 | Mobile                                                                       | Desktop                                                                        |
 | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
 | ![Mobile check the answer](readme-files/finished-product/mobile-answers.png) | ![Desktop check the answer](readme-files/finished-product/desktop-answers.png) |
+
+[def]: https://coolors.co/
