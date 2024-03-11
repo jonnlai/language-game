@@ -109,16 +109,44 @@ The six answers are selected randomly from the eight options and are being displ
 
 ![Answers One](readme-files/features/answers-one.png) ![Answers Two](readme-files/features/answers-two.png) ![Answers Three](readme-files/features/answers-three.png)
 
-| Mobile                                                                                          | Desktop                                                                                         |
+If the player is using a touch screen device such as a mobile phone, first they tap the option they want to select and then they tap the square where they want the word to go. If they are using a mouse, they need to drag and drop the options to the correct blank squares.
+
+| Touch screen                                                                                    | Mouse                                                                                           |
 | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | <video controls src="readme-files/features/play-mobile.mp4" title="Play demo - mobile"></video> | <video controls src="readme-files/features/play-desktop.mp4" title="Play demo desktop"></video> |
 
 ### Check the answer
 
-When the player clicks "Submit"
+When the player clicks "Submit", the answers they have given are checked. All the correct answers are indicated by giving the answers green background colour and adding a green tick next to the answer. Incorrect correct answer are indicated by red backgroud colour and a red x next to the word.
+
 ![Check the answer](readme-files/features/check-answer.png)
 
+The correct and incorrect answers are counted and the player given a message to either congratulate them for getting all the answers correct or to encourage them to continue practising. Clicking "Play Again" reload the page taking the player back to the initial screen.
+
 ![Answer Count](readme-files/features/answer-count.png) ![All correct](readme-files/features/all-correct.png)
+
+[Back to top](#vocabulary-booster)
+
+## Technologies Used
+
+### Languages Used
+
+- [HTML5](https://html.com/html5/)
+- [CSS3](https://www.w3.org/Style/CSS/)
+
+### Frameworks, Libraries and Programmes Used
+
+- [Balsamiq](https://balsamiq.com/) was used for designing the project and creating wireframes to communicate the vision.
+- [VSCode](https://code.visualstudio.com/) was used for writing, committing, and pushing code to GitHub.
+- [GitHub](https://github.com/) was used for storing the project.
+- [Google Fonts](https://fonts.google.com/) was used to import the selected fonts.
+- [Font Awesome](https://fontawesome.com/) was used to add icons to the site to give the user a visual representation of incorrect and correct answers.
+- [Chrome DevTools](https://developer.chrome.com/docs/devtools) were used regularly throughout the development of the project to test and troubleshoot.
+- [Pixelied](https://pixelied.com/convert/) was used to convert the images to webp format.
+- [TinyPNG](https://tinypng.com/) was used to optimise the images by reducing their size.
+- [Favicon.io](https://favicon.io/) was used to create the Favicon.
+- [Responsive Design Checker](https://www.responsivedesignchecker.com/) was used to check the site's responsiveness on different devices.
+- [Am I responsive?](https://ui.dev/amiresponsive) was used to create the mockup image of the landing page on different devices.
 
 [Back to top](#vocabulary-booster)
 
