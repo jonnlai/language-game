@@ -368,6 +368,7 @@ function playGame() {
 function checkAnswer() {
   // Remove the submit button after it has been clicked
   document.getElementById("submit-answer").style.display = "none";
+  document.getElementById("answer-count").style.display = "block";
   // Stop the draggable elements being draggable
   const draggables = document.getElementsByClassName("draggable");
   for (let a in draggables) {

@@ -115,6 +115,7 @@ and https://developer.mozilla.org/en-US/docs/Web/CSS/grid*/
 /* Count of the correct and incorrect answers */
 #answer-count {
   margin: 10px 5px;
+  display: none;
 }
 
 #answer-count > span {
