@@ -60,7 +60,7 @@ The main font used is Raleway, with sans serif as the fallback font. Indie Flowe
 
 - The project was developed using a "mobile first" development approach to ensure good User Experience for those using mobile phones and other smaller devices.
 - The site is fully responsive across all device sizes.
-- Consistant style, including colours and fonts, were used across all the pages.
+- Consistent style, including colours and fonts, were used across all the pages.
 
 ### Favicon
 
@@ -70,7 +70,7 @@ The main font used is Raleway, with sans serif as the fallback font. Indie Flowe
 
 ### Notebook background
 
-The game and the instructions are displayed on a background image that looks like a notebook page. There are two versions of the notebook image: longer and narrower image for mobile devices and a wider images for larger screens.
+The game and the instructions are displayed on a background image that looks like a notebook page. There are two versions of the notebook image: longer and narrower image for mobile devices and a wider image for larger screens.
 
 | Mobile                                                                  | Desktop                                                       |
 | ----------------------------------------------------------------------- | ------------------------------------------------------------- |
@@ -78,19 +78,19 @@ The game and the instructions are displayed on a background image that looks lik
 
 ### Body background
 
-When the game is being played using a tablet or a larger device, an image of book shelves in a dimly lit room is being displayed in the background. Together with the notebook image this gives the user a sense of relaxed and fun but high-quality study experience.
+When the game is being played using a tablet or a larger device, an image of bookshelves in a dimly lit room is being displayed in the background. Together with the notebook image this gives the user a sense of relaxed and fun but high-quality study experience.
 
 ![Body Background](readme-files/features/body-bg.png)
 
 ### Heading
 
-The heading gives the user the name of the game and is being dislayed on top of the "notebook page" throughout the game. A cursive font, Indie Flower, is being used to give a hand-written feel, as if someone had handwritten the game on the notebook.
+The heading gives the user the name of the game and is being displayed on top of the "notebook page" throughout the game. A cursive font, Indie Flower, is being used to give a hand-written feel, as if someone had handwritten the game on the notebook.
 
 ![Heading](readme-files/features/heading.png)
 
 ### Instructions
 
-The instructions on how to play the game are displayed when the page loads. The goal of the game is explained clearly as well as how to play using either a touch screen device or a mouse. When using a smaller device (<750px) instructions on how to play using a mouse are hidden to save space on smaller screens. When using a screen larger than 750px, all the instructions are displayed in case the user is larger touch screen device.
+The instructions on how to play the game are displayed when the page loads. The goal of the game is explained clearly as well as how to play using either a touch screen device or a mouse. When using a smaller device (<750px), instructions on how to play using a mouse are hidden to save space on smaller screens. When using a screen larger than 750px, all the instructions are displayed in case the user is larger touch screen device.
 
 | Mobile                                                                | Desktop                                                 |
 | --------------------------------------------------------------------- | ------------------------------------------------------- |
@@ -130,11 +130,11 @@ If the player is using a touch screen device such as a mobile phone, first they 
 
 ### Check the answer
 
-When the player clicks "Submit", the answers they have given are checked. All the correct answers are indicated by giving the answers green background colour and adding a green tick next to the answer. Incorrect correct answer are indicated by red backgroud colour and a red x next to the word.
+When the player clicks "Submit", the answers they have given are checked. All the correct answers are indicated by giving the answers green background colour and adding a green tick next to the answer. Incorrect correct answer are indicated by red background colour and a red x next to the word.
 
 ![Check the answer](readme-files/features/check-answer.png)
 
-The correct and incorrect answers are counted and the player given a message to either congratulate them for getting all the answers correct or to encourage them to continue practising. Clicking "Play Again" reload the page taking the player back to the initial screen.
+The correct and incorrect answers are counted, and the player shown a message to either congratulate them for getting all the answers correct or to encourage them to continue practising. Clicking "Play Again" reloads the page taking the player back to the initial screen.
 
 ![Answer Count](readme-files/features/answer-count.png) ![All correct](readme-files/features/all-correct.png)
 
@@ -170,18 +170,18 @@ The correct and incorrect answers are counted and the player given a message to 
 
 1. As a new language learner, I want an easy way to improve my vocabulary.
 
-   - The game allows the user choose whether they want to translate from Finnish or English, and let's the user to practise as long as needed.
+   - The game allows the user to choose whether they want to translate from Finnish or English, and lets the user to practise as long as needed.
 
 2. As a language learner, I want a fun and engaging way to learn.
 
-   - The game is easy to navigate and use, and has fun but professional feel to it.
+   - The game is easy to navigate and use, and it has fun but professional feel to it.
 
 3. As someone who has been learning their target language for some time already, I want to be able to challenge myself.
-   - The game let's the user to select different themes so that they can challenge themselves and continue expanding their vocabulary.
+   - The game lets the user to select different themes so that they can challenge themselves and continue expanding their vocabulary.
 
 ### Code Validation
 
-- The [W3C Markup Validator](https://validator.w3.org/), [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) and [JSHint](https://jshint.com/) were used to validate the code to ensure that the project meets the current Web Standards and is free from any unintended syntax errors and mistakes that could cause issues with accessibilty and usability.
+- The [W3C Markup Validator](https://validator.w3.org/), [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) and [JSHint](https://jshint.com/) were used to validate the code to ensure that the project meets the current Web Standards and is free from any unintended syntax errors and mistakes that could cause issues with accessibility and usability.
 
 - W3C Markup Validator:
 
@@ -227,13 +227,13 @@ The website was tested on the following devices:
 
 #### Common Elements Testing
 
-- **Dropdown menus:** Dropmenus menus work correctly allowing the user to choose their desired language combination and theme.
+- **Dropdown menus:** Dropdown menus work correctly allowing the user to choose their desired language combination and theme.
 - **Play button:** When clicked or tapped, the play button starts the game correctly by displaying the selected game.
 - **Drag and Drop:** When using a mouse, the drag and drop function works correctly allowing an option to be selected, dragged to the desired dropzone and dropped there. The function allows the position of an option to be changed if needed.
 - **Tap to select an option:** When using a touch screen device, an option can be selected by tapping it. The selected option's font weight becomes bold to indicate that it has been selected.
 - **Tap to drop an option:** When using a touch screen device, the selected option can be "dropped" by tapping the desired dropzone. The option's font weight returns back to normal. The option can be selected and moved again if needed.
 - **Submit button:** The Submit button checks the answer and displays correct answers in green and incorrect ones in red. The number of correct answers when using a device wider than 350px or longer than 600px.
-- **Play Again button:** The Play Again button is displayd correctly after Submit button has been clicked. Clicking the button reloads the page starting the game again.
+- **Play Again button:** The Play Again button is displayed correctly after Submit button has been clicked. Clicking the button reloads the page starting the game again.
 
 ### Performance and Accessibility
 
@@ -262,7 +262,7 @@ During the development process, a warning message about a non-passive event list
 
 ### Unsolved Bugs
 
-- It is still possible to move the options after submitting the answer when using a touch screen device. This does not impact the score and therefore, this issue is being considered critical but it would beneficial to resolve this is in the future.
+- It is still possible to move the options after submitting the answer when using a touch screen device. This does not impact the score and therefore, this issue is being considered critical but it would be beneficial to resolve this is in the future.
 
 [Back to top](#vocabulary-booster)
 
@@ -362,6 +362,6 @@ All the content was written by the developer.
 The following features were considered during the development of this project, but it has not been possible to implement them yet.
 
 - **Display answer function** A function to display the correct answers after the user has submitted their answers if they did not get all of them correct.
-- **Challange function** A function to allow the user to write the translations of the two missing words as an extra challenge if they have matched all the six words correctly.
+- **Challenge function** A function to allow the user to write the translations of the two missing words as an extra challenge if they have matched all the six words correctly.
 - **Level 2 game** Instead of matching two words, this game requires the player to write the translation of each word without any prompts.
-- **Help pop up** A button that allows the user to open the instructions as a pop up window while they have the game open if they need to review the instructions again.
+- **Help pop-up** A button that allows the user to open the instructions as a pop-up window while they have the game open if they need to review the instructions again.
