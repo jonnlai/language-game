@@ -244,12 +244,16 @@ Chrome DevTool Lighthouse was used to assess the project's performance and acces
 
 ### Responsiveness
 
-In addition to manual checks, responsiveness was tested further using [Chrome DevTools](https://developer.chrome.com/docs/devtools) and [Responsive Design Checker](https://www.responsivedesignchecker.com/). Media query was added to make the page more responsive by reducing the content and spacing when using a short and narrow device. This means the users of those devices don't need scroll when playing the play but can display the whole game on their screen. No other issues were identified.
+In addition to manual checks, responsiveness was tested further using [Chrome DevTools](https://developer.chrome.com/docs/devtools) and [Responsive Design Checker](https://www.responsivedesignchecker.com/). Media query was added to make the page more responsive by reducing the amount of content and spacing when using a short (<600px) and narrow (<350px) device. This means the users of those devices don't need scroll when playing the play but can display the whole game on their screen. No other issues were identified.
+
+During the development process, a warning message about a non-passive event listener was noted. The event handler was made passive to improve responsiveness as suggested.
+![Non-passive event listener warning](readme-files/testing/violation-non-passive-event-listener.png)
 
 ### Solved Bugs
 
 - A script src attribute had been incorrectly typed as "scr" which meant that the Javascript was not correctly linked. This was fixed early on.
 - Inside playGame() function, the dropZones variable was a NodeList and therefore, an error message was received when for...in loop was being used to iterate through it. The dropZones variable was converted to array resolve this issue.
+- After the drag and drop functionality was added, the game only worked when using a mouse. The developer tried to solve this issue by adding "touch action: none" to the draggable elements ([GitHub](https://github.com/taye/interact.js/issues/564)). However, this did not solve the problem. Therefore, it was decided that it was best to add "touchstart" event listeners to allow playing by tapping the selected option and dropzone. ([Web Dev Simplified- Learn Javascript Touch Events in 17 Minutes](https://www.youtube.com/watch?v=TaPdgj8mucI))
 - Two options could be dropped in the same dropZone causing an error. This was solved adding an if statement to check whether the target element has a childNode already and if so, return without appending the selected option.
 - When using a touch screen device, it was possible to select one of the dropZone squares before selecting an option. This resulted in selectedOption being given the value of "undefined" and that being appended to the tapped dropZone square resulting in an error. This was solved by adding an if statement to check whether selectedOption has the value of undefined and if so return without appending the selected option.
 - Favicon did not display correct because the file path was incorrect. This was solved by assets/favicon to file path.
@@ -341,9 +345,14 @@ All the content was written by the developer.
 ### Code
 
 - The idea to use a for loop to create a grid and how to use drag and drop event listeners were taken from [Slide-Puzzle](https://github.com/ImKennyYip/slide-puzzle/blob/master/puzzle.js)
-- To following resources were also consulted to create the drag and drop event listeners:
+- The following resources were also consulted to create the drag and drop event listeners:
   - [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/drag_event)
   - [Darwin Tech JavaScript Drag and Drop Youtube tutorial](https://www.youtube.com/watch?v=_G8G1OrEOrI)
+- The following resources were consulted to create the touch events:
+
+  - [Web Dev Simplified- Learn Javascript Touch Events in 17 Minutes](https://www.youtube.com/watch?v=TaPdgj8mucI)
+  - [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Touch_events)
+
 - [W3Schools](https://www.w3schools.com/), [Stack Overflow](https://stackoverflow.com/) and [MDN Web Docs](https://developer.mozilla.org/en-US/) were regularly consulted for ideas and to ensure understanding.
 
 [Back to top](#vocabulary-booster)

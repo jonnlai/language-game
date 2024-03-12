@@ -278,6 +278,7 @@ function displayFinEngNature() {
  * How to use drag and drop event listeners was taken from: https://github.com/ImKennyYip/slide-puzzle/blob/master/puzzle.js
  * and https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/drag_event
  * and Darwin Tech JavaScript Drag and Drop Youtube tutorial: https://www.youtube.com/watch?v=_G8G1OrEOrI
+ * How to use touch events was taken from Web Dev Simplified- Learn Javascript Touch Events in 17 Minutes - https://www.youtube.com/watch?v=TaPdgj8mucI
  */
 function playGame() {
   // Add submit button
