@@ -256,12 +256,12 @@ function displayFinEngNature() {
     }
   }
 
-  // Create an array of 6 random animal names in Finnish using the random index numbers
+  // Create an array of 6 random nature words in Finnish using the random index numbers
   for (let index in randomIndex) {
     translatedNames.push(nature[randomIndex[index]][0]);
   }
 
-  // Add the random translated animal names to the options area
+  // Add the random translated nature words to the options area
   i = 0;
   for (let option in options) {
     options[option].textContent = translatedNames[i];
@@ -372,8 +372,8 @@ function checkAnswer() {
   document.getElementById("answer-count").style.display = "block";
   // Stop the draggable elements being draggable
   const draggables = document.getElementsByClassName("draggable");
-  for (let a in draggables) {
-    draggables[a].draggable = false;
+  for (let draggable in draggables) {
+    draggables[draggable].draggable = false;
   }
   // Create "Play Again" button
   const againBtn = document.createElement("button");
@@ -407,7 +407,8 @@ function checkAnswer() {
   let incorrectAnswers = document.createElement("span");
 
   // Check which game the player is playing by checking the inner text of the first game square (0-0)
-  // Assign the value 1 to language variable if the first word is in English (to indicate the answers are in Finnish) and 0 if the first word is in Finnish (answers are in English)
+  /* Assign the value 1 to language variable if the first word is in English (to indicate the answers are in Finnish) 
+  and 0 if the first word is in Finnish (answers are in English) */
   const firstGameWord = document.getElementById("0-0").innerText;
   let language;
   let theme;
@@ -426,29 +427,29 @@ function checkAnswer() {
   }
 
   // Check if an ID is in the answerIds array and if so create an answerSquare variable and check if it's inner text matches the correct answer
-  let y = 0;
-  while (y < 8) {
-    let id = "1-" + y;
-    let idTwo = "2-" + y;
+  let row = 0;
+  while (row < 8) {
+    let id = "1-" + row;
+    let idTwo = "2-" + row;
     if (answerIds.includes(id)) {
       let answerSquare = document
         .getElementById(id)
         .querySelector("div").innerText;
-      if (answerSquare === theme[y][language]) {
+      if (answerSquare === theme[row][language]) {
         document.getElementById(id).style.backgroundColor = "#adeaad";
         document.getElementById(idTwo).style.color = "green";
         document.getElementById(idTwo).innerHTML = correctIcon;
         correctCount += 1;
-        y += 1;
+        row += 1;
       } else {
         document.getElementById(id).style.backgroundColor = "#ea5757";
         document.getElementById(idTwo).style.color = "#ff2800";
         document.getElementById(idTwo).innerHTML = incorrectIcon;
         incorrectCount += 1;
-        y += 1;
+        row += 1;
       }
     } else {
-      y += 1;
+      row += 1;
       continue;
     }
   }
