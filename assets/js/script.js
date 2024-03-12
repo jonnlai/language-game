@@ -83,11 +83,11 @@ function displayEngFinAnimals() {
   //Select all the divs that have an id that starts with "option-" i.e. the divs that hold the options/translated words
   const options = document.querySelectorAll("[id^='option-'");
   // Add the English words in the game area
-  let x = 0;
+  let i = 0;
   for (let word in originalWords) {
-    originalWords[word].textContent = animals[x][0];
-    if (x < 7) {
-      x += 1;
+    originalWords[word].textContent = animals[i][0];
+    if (i < 7) {
+      i += 1;
     }
   }
 
@@ -95,14 +95,14 @@ function displayEngFinAnimals() {
   let translatedNames = [];
 
   // Create an array of random index numbers
-  let b = 0;
-  while (b < 6) {
+  i = 0;
+  while (i < 6) {
     let num = Math.floor(Math.random() * 8);
     if (randomIndex.includes(num)) {
       continue;
     } else {
       randomIndex.push(num);
-      b += 1;
+      i += 1;
     }
   }
 
@@ -112,11 +112,11 @@ function displayEngFinAnimals() {
   }
 
   // Add the random translated animal names to the options area
-  let c = 0;
+  i = 0;
   for (let option in options) {
-    options[option].textContent = translatedNames[c];
-    if (c < 5) {
-      c += 1;
+    options[option].textContent = translatedNames[i];
+    if (i < 5) {
+      i += 1;
     }
   }
 
@@ -133,11 +133,11 @@ function displayFinEngAnimals() {
   //Select all the divs that have an id that starts with "option-" i.e. the divs that hold the options/translated words
   let options = document.querySelectorAll("[id^='option-'");
   // Add the Finnish words in the game area
-  let x = 0;
+  let i = 0;
   for (let word in originalWords) {
-    originalWords[word].textContent = animals[x][1];
-    if (x < 7) {
-      x += 1;
+    originalWords[word].textContent = animals[i][1];
+    if (i < 7) {
+      i += 1;
     }
   }
 
@@ -145,14 +145,14 @@ function displayFinEngAnimals() {
   let translatedNames = [];
 
   // Create an array of random index numbers
-  let b = 0;
-  while (b < 6) {
+  i = 0;
+  while (i < 6) {
     let num = Math.floor(Math.random() * 8);
     if (randomIndex.includes(num)) {
       continue;
     } else {
       randomIndex.push(num);
-      b += 1;
+      i += 1;
     }
   }
 
@@ -162,11 +162,11 @@ function displayFinEngAnimals() {
   }
 
   // Add the random translated animal names to the options area
-  let c = 0;
+  i = 0;
   for (let option in options) {
-    options[option].textContent = translatedNames[c];
-    if (c < 5) {
-      c += 1;
+    options[option].textContent = translatedNames[i];
+    if (i < 5) {
+      i += 1;
     }
   }
 
@@ -183,11 +183,11 @@ function displayEngFinNature() {
   //Select all the divs that have an id that starts with "option-" i.e. the divs that hold the options/translated words
   const options = document.querySelectorAll("[id^='option-'");
   // Add the English words in the game area
-  let x = 0;
+  let i = 0;
   for (let word in originalWords) {
-    originalWords[word].textContent = nature[x][0];
-    if (x < 7) {
-      x += 1;
+    originalWords[word].textContent = nature[i][0];
+    if (i < 7) {
+      i += 1;
     }
   }
 
@@ -195,28 +195,28 @@ function displayEngFinNature() {
   let translatedNames = [];
 
   // Create an array of random index numbers
-  let b = 0;
-  while (b < 6) {
+  i = 0;
+  while (i < 6) {
     let num = Math.floor(Math.random() * 8);
     if (randomIndex.includes(num)) {
       continue;
     } else {
       randomIndex.push(num);
-      b += 1;
+      i += 1;
     }
   }
 
-  // Create an array of 6 random animal names in Finnish using the random index numbers
+  // Create an array of 6 random nature words in Finnish using the random index numbers
   for (let index in randomIndex) {
     translatedNames.push(nature[randomIndex[index]][1]);
   }
 
-  // Add the random translated animal names to the options area
-  let c = 0;
+  // Add the random translated nature words to the options area
+  i = 0;
   for (let option in options) {
-    options[option].textContent = translatedNames[c];
-    if (c < 5) {
-      c += 1;
+    options[option].textContent = translatedNames[i];
+    if (i < 5) {
+      i += 1;
     }
   }
 
@@ -233,11 +233,11 @@ function displayFinEngNature() {
   //Select all the divs that have an id that starts with "option-" i.e. the divs that hold the options/translated words
   const options = document.querySelectorAll("[id^='option-'");
   // Add the English words in the game area
-  let x = 0;
+  let i = 0;
   for (let word in originalWords) {
-    originalWords[word].textContent = nature[x][1];
-    if (x < 7) {
-      x += 1;
+    originalWords[word].textContent = nature[i][1];
+    if (i < 7) {
+      i += 1;
     }
   }
 
@@ -245,14 +245,14 @@ function displayFinEngNature() {
   let translatedNames = [];
 
   // Create an array of random index numbers
-  let b = 0;
-  while (b < 6) {
+  i = 0;
+  while (i < 6) {
     let num = Math.floor(Math.random() * 8);
     if (randomIndex.includes(num)) {
       continue;
     } else {
       randomIndex.push(num);
-      b += 1;
+      i += 1;
     }
   }
 
@@ -262,11 +262,11 @@ function displayFinEngNature() {
   }
 
   // Add the random translated animal names to the options area
-  let c = 0;
+  i = 0;
   for (let option in options) {
-    options[option].textContent = translatedNames[c];
-    if (c < 5) {
-      c += 1;
+    options[option].textContent = translatedNames[i];
+    if (i < 5) {
+      i += 1;
     }
   }
 

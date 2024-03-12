@@ -14,7 +14,7 @@
   font-family: "Raleway", sans-serif;
   /* Back-up background colour in case of issues loading the background image */
   background-color: #f5deb3;
-  /*Photo by <a href="/photographer/fresh-m-44134">fresh-m</a> on <a href="/">Freeimages.com</a>*/
+  /*Image by KamranAydinov on Freepik*/
   background: url("../images/notepad-long-optimized.webp") no-repeat;
   background-size: cover;
   height: 100vh;
@@ -171,6 +171,7 @@ button:hover {
 @media screen and (min-width: 750px) {
   /* Add bg image to the body */
   body {
+    /* Image by StockSnap from Pixabay */
     background: url("../images/book-shelves-optimized.webp") no-repeat center
       center/cover;
   }
