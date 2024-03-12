@@ -2,7 +2,7 @@
 
 ![Mockup image of the project](readme-files/mockup.png)
 
-Vocabulary Booster is an online language learning game that allows users to improve their Finnish and English vocabulary by playing a fun game.
+Vocabulary Booster is an online language-learning game that allows users to improve their Finnish and English vocabulary by playing a fun game.
 
 The purpose of this project is to help those who are learning Finnish or English to increase their vocabulary and encourage others to take up language learning by offering fun, easy and engaging way to start learning a new language.
 
@@ -34,7 +34,7 @@ The deployed project can be found here: [Vocabulary Booster](https://jonnlai.git
 
 ### Colour Palette
 
-The colour palette was created using the [Coolors](https://coolors.co/) colour palette generator. The first two colours (blue and wheat) are being used as the background colour of the squares that hold the words in different languages. Black is being used throughout the page for fonts and borders and last colour (#CFC3BB) is being used for buttons when they are being hovered over.
+The colour palette was created using the [Coolors](https://coolors.co/) colour palette generator. The first two colours (blue and wheat) are being used as the background colour of the squares that hold the words in different languages. Black is being used throughout the page for fonts and borders and the last colour (#CFC3BB) is being used for buttons when they are being hovered over.
 
 ![Colour Palette](readme-files/vocab-booster.png)
 
@@ -60,17 +60,17 @@ The main font used is Raleway, with sans serif as the fallback font. Indie Flowe
 
 - The project was developed using a "mobile first" development approach to ensure good User Experience for those using mobile phones and other smaller devices.
 - The site is fully responsive across all device sizes.
-- Consistent style, including colours and fonts, were used across all the pages.
+- Consistent style, including colours and fonts, was used across all the pages.
 
 ### Favicon
 
-- The Favicon is an emoji of three books piled on top of another to represent learning and studying.
+- The Favicon is an emoji of three books piled on top of one another to represent learning and studying.
 
 ![Favicon](readme-files/wireframes/favicon.png)
 
 ### Notebook background
 
-The game and the instructions are displayed on a background image that looks like a notebook page. There are two versions of the notebook image: longer and narrower image for mobile devices and a wider image for larger screens.
+The game and the instructions are displayed on a background image that looks like a notebook page. There are two versions of the notebook image: a longer and narrower image for mobile devices and a wider image for larger screens.
 
 | Mobile                                                                  | Desktop                                                       |
 | ----------------------------------------------------------------------- | ------------------------------------------------------------- |
@@ -78,19 +78,19 @@ The game and the instructions are displayed on a background image that looks lik
 
 ### Body background
 
-When the game is being played using a tablet or a larger device, an image of bookshelves in a dimly lit room is being displayed in the background. Together with the notebook image this gives the user a sense of relaxed and fun but high-quality study experience.
+When the game is being played using a tablet or a larger device, an image of bookshelves in a dimly lit room is displayed in the background. Together with the notebook image, this gives the user a sense of relaxed and fun but high-quality study experience.
 
 ![Body Background](readme-files/features/body-bg.png)
 
 ### Heading
 
-The heading gives the user the name of the game and is being displayed on top of the "notebook page" throughout the game. A cursive font, Indie Flower, is being used to give a hand-written feel, as if someone had handwritten the game on the notebook.
+The heading tells the user the name of the game and it is shown on top of the "notebook page" throughout the game. A cursive font, Indie Flower, is being used to give a hand-written feel, as if someone had handwritten the game on the notebook.
 
 ![Heading](readme-files/features/heading.png)
 
 ### Instructions
 
-The instructions on how to play the game are displayed when the page loads. The goal of the game is explained clearly as well as how to play using either a touch screen device or a mouse. When using a smaller device (<750px), instructions on how to play using a mouse are hidden to save space on smaller screens. When using a screen larger than 750px, all the instructions are displayed in case the user is larger touch screen device.
+The instructions on how to play the game are displayed when the page loads. The goal of the game is explained clearly as well as how to play using either a touch screen device or a mouse. When using a smaller device (<750px), instructions on how to play using a mouse are hidden to save space on smaller screens. When using a screen larger than 750px, all the instructions are displayed in case the user is using a larger touch screen device rather than a desktop or laptop with a mouse.
 
 | Mobile                                                                | Desktop                                                 |
 | --------------------------------------------------------------------- | ------------------------------------------------------- |
@@ -112,13 +112,13 @@ When hovered over, the buttons change colour to a darker shade to give the user 
 
 ### Game
 
-The eight words that need to be translated are displayed on the left on blue background. The six translated words are displayed on the right on wheat-coloured background. The "dropzones", the areas where the player needs to place the translated words, have dashed borders.
+The eight words that need to be translated are displayed on the left on a blue background. The six translated words are displayed on the right on a wheat-coloured background. The "dropzones", the areas where the player needs to place the translated words, have dashed borders.
 
 | Game English - Finnish                         | Game Finnish - English                                 |
 | ---------------------------------------------- | ------------------------------------------------------ |
 | ![Game mode 1](readme-files/features/game.png) | ![Game mode 2](readme-files/features/game-fin-eng.png) |
 
-The six answers are selected randomly from the eight options and are being displayed in a random order to challenge the player each time they play.
+The six answers are selected randomly from the eight options and are displayed in a random order to challenge the player each time they play.
 
 ![Answers One](readme-files/features/answers-one.png) ![Answers Two](readme-files/features/answers-two.png) ![Answers Three](readme-files/features/answers-three.png)
 
@@ -194,12 +194,12 @@ The correct and incorrect answers are counted, and the player shown a message to
 
 - JSHint:
 
-  - highlighted that "b" variable had not been defined. This was fixed by adding the "let" keyword to declare the variable
+  - highlighted that "b" variable had not been defined. This was fixed by adding the "let" keyword to declare the variable. (The variable name was changed to i later to improve the variable name.)
 
   ![Undefined variable](readme-files/testing/JSHint-undefined-var.png)
 
   - highlighted that "loadGame" was unused. However, this function is being called from index.html and therefore, this warning was ignored.
-  - gave warnings below. These don't impact the current functionality of the page so these warnings were ignored.
+  - gave the warnings below. These don't impact the current functionality of the page so these warnings were ignored.
 
   ![Warnings One](readme-files/testing/JSHint-warnings-one.png) ![Warnings Two](readme-files/testing/JSHint-warnings-two.png) ![Warnings Three](readme-files/testing/JSHint-warnings-three.png)
 
