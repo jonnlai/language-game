@@ -207,33 +207,43 @@ The correct and incorrect answers are counted, and the player is shown a message
 
 #### Browser compatibility
 
-The website was tested on the following browsers:
-
-- Google Chrome - no issues identified.
-- Mozilla Firefox - The Game Mode label was displayed over two lines. The label length was increased by 5px to resolve this issue.
-- Microsoft Edge - no issues identified.
-- Samsung Internet (tablet) - no issues identified.
+| Browser          | Outcome                                                                                                                                                          | Pass/Fail |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| Google Chrome    | No appearance, responsiveness nor functionality issues.                                                                                                          | Pass      |
+| Mozilla Firefox  | The Game Mode label was displayed over two lines. <br>The label length was increased by 5px to resolve this issue.<br>No responsiveness nor functionality issues | Pass      |
+| Microsoft Edge   | No appearance, responsiveness nor functionality issues.                                                                                                          | Pass      |
+| Samsung Internet | No appearance, responsiveness nor functionality issues.                                                                                                          | Pass      |
 
 #### Device compatibility
 
-The website was tested on the following devices:
-
-- Sony Xperia 10 III - no issues identified.
-- Samsung Galaxy A52s - no issues identified.
-- Lenovo Yoga s730 - no issues identified.
-- Sony VAIO 15" - no issues identified.
-- Dell P2419H 24" screen - no issues identified.
-- Samsung Galaxy Tab S4 - no issues identified.
+| Device                 | Outcome                                                 | Pass/Fail |
+| ---------------------- | ------------------------------------------------------- | --------- |
+| Sony Xperia 10 III     | No appearance, responsiveness nor functionality issues. | Pass      |
+| Samsung Galaxy A52s    | No appearance, responsiveness nor functionality issues. | Pass      |
+| Lenovo Yoga s730       | No appearance, responsiveness nor functionality issues. | Pass      |
+| Sony VAIO 15"          | No appearance, responsiveness nor functionality issues. | Pass      |
+| Dell P2419H 24" screen | No appearance, responsiveness nor functionality issues. | Pass      |
+| Samsung Galaxy Tab S4  | No appearance, responsiveness nor functionality issues. | Pass      |
 
 #### Common Elements Testing
 
-- **Dropdown menus:** Dropdown menus work correctly allowing the user to choose their desired language combination and theme.
-- **Play button:** When clicked or tapped, the play button starts the game correctly by displaying the selected game.
-- **Drag and Drop:** When using a mouse, the drag and drop function works correctly allowing an option to be selected, dragged to the desired dropzone and dropped there. The function allows the position of an option to be changed if needed.
-- **Tap to select an option:** When using a touch screen device, an option can be selected by tapping it. The selected option's font-weight becomes bold to indicate that it has been selected.
-- **Tap to drop an option:** When using a touch screen device, the selected option can be "dropped" by tapping the desired dropzone. The option's font-weight returns to normal. The option can be selected and moved again if needed.
-- **Submit button:** The Submit button checks the answer and displays correct answers in green and incorrect ones in red. The number of correct answers is hidden when using a device wider than 350px or longer than 600px.
-- **Play Again button:** The Play Again button is displayed correctly after the Submit button has been clicked. Clicking the button reloads the page starting the game again.
+- Game Instructions
+
+| Feature            | Outcome                                                                             | Pass/Fail |
+| ------------------ | ----------------------------------------------------------------------------------- | --------- |
+| Game mode dropdown | Working as expected.                                                                | Pass      |
+| Theme dropdown     | Working as expected.                                                                | Pass      |
+| Play button        | Hover effect works as expected. Game starts when the button is clicked as expected. | Pass      |
+
+- Game
+
+| Feature                      | Outcome                                                                                                                                                                                                                                   | Pass/Fail |
+| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| Drag and Drop (mouse)        | Works as expected.                                                                                                                                                                                                                        | Pass      |
+| Tap to select (touch screen) | Functionality works as expected. The selected option's font-weight changes to bold when tapped as expected.                                                                                                                               | Pass      |
+| Tap to "drop" (touch screen) | Works as expected. The selected option's font-weight returns to normal.                                                                                                                                                                   | Pass      |
+| Submit button                | Works as expected. The correct answers are highlighted in green and incorrect ones in red. The answers are counted and displayed. The number of correct answers is hidden when using a device narrower than 350px or lshorter than 600px. | Pass      |
+| Play again button            | Works as expected. Reloads the page to restart the game                                                                                                                                                                                   | Pass      |
 
 ### Performance and Accessibility
 
