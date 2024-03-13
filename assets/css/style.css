@@ -187,7 +187,7 @@ button:hover {
   /* Main game area */
   #game-container {
     /* Replace the main bg image with a wider image */
-    background: url("../images/notepad-optimized.webp") no-repeat;
+    background: url("../images/notepad-wide-optimized.webp") no-repeat;
     background-size: contain;
     width: 750px;
     height: 600px;

@@ -1,25 +1,25 @@
 // An array of different animal names in different languages
 const animals = [
-  ["dog", "koira", "perro"],
-  ["cat", "kissa", "gato"],
-  ["bird", "lintu", "pajaro"],
-  ["bear", "karhu", "oso"],
-  ["wolf", "susi", "lobo"],
-  ["snake", "käärme", "serpiente"],
-  ["horse", "hevonen", "caballo"],
-  ["sheep", "lammas", "oveja"],
+  ["dog", "koira"],
+  ["cat", "kissa"],
+  ["bird", "lintu"],
+  ["bear", "karhu"],
+  ["wolf", "susi"],
+  ["snake", "käärme"],
+  ["horse", "hevonen"],
+  ["sheep", "lammas"],
 ];
 
-// An array of different words relating to nature
+// An array of different words relating to nature in different languages
 const nature = [
-  ["tree", "puu", "árbol"],
-  ["flower", "kukka", "flor"],
-  ["forest", "metsä", "bosque"],
-  ["lake", "järvi", "lago"],
-  ["sea", "meri", "mar"],
-  ["berry", "marja", "baya"],
-  ["sun", "aurinko", "sol"],
-  ["rain", "sade", "lluvia"],
+  ["tree", "puu"],
+  ["flower", "kukka"],
+  ["forest", "metsä"],
+  ["lake", "järvi"],
+  ["sea", "meri"],
+  ["berry", "marja"],
+  ["sun", "aurinko"],
+  ["rain", "sade"],
 ];
 
 /**
@@ -57,7 +57,7 @@ function loadGame() {
 }
 
 /**
- * Display the selected game based on "mode" and "theme" values
+ * Select a game based on "mode" and "theme" values
  */
 function selectGame() {
   let mode = document.getElementById("mode").value;
@@ -70,6 +70,10 @@ function selectGame() {
     displayEngFinNature();
   } else if (mode === "fin-to-eng" && theme === "nature") {
     displayFinEngNature();
+  } else {
+    // Adding a throw statement to create a custom error taken from Code Institutes Love Maths walkthrough project
+    alert(`Unknown mode or theme. Please select again`);
+    throw `Unknown mode or theme: ${mode}, ${theme}. Aborting!`;
   }
 }
 
@@ -94,7 +98,7 @@ function displayEngFinAnimals() {
   let randomIndex = [];
   let translatedNames = [];
 
-  // Create an array of random index numbers
+  // Create an array of 6 random index numbers out of 8 possible index numbers
   i = 0;
   while (i < 6) {
     let num = Math.floor(Math.random() * 8);
@@ -106,7 +110,7 @@ function displayEngFinAnimals() {
     }
   }
 
-  // Create an array of 6 random animal names in Finnish using the random index numbers
+  // Create an array of 6 random animal names in Finnish using the 6 random index numbers
   for (let index in randomIndex) {
     translatedNames.push(animals[randomIndex[index]][1]);
   }
@@ -144,7 +148,7 @@ function displayFinEngAnimals() {
   let randomIndex = [];
   let translatedNames = [];
 
-  // Create an array of random index numbers
+  // Create an array of 6 random index numbers out of 8 possible index numbers
   i = 0;
   while (i < 6) {
     let num = Math.floor(Math.random() * 8);
@@ -194,7 +198,7 @@ function displayEngFinNature() {
   let randomIndex = [];
   let translatedNames = [];
 
-  // Create an array of random index numbers
+  // Create an array of 6 random index numbers out of 8 possible index numbers
   i = 0;
   while (i < 6) {
     let num = Math.floor(Math.random() * 8);
@@ -244,7 +248,7 @@ function displayFinEngNature() {
   let randomIndex = [];
   let translatedNames = [];
 
-  // Create an array of random index numbers
+  // Create an array of 6 random index numbers out of 8 possible index numbers
   i = 0;
   while (i < 6) {
     let num = Math.floor(Math.random() * 8);
@@ -369,12 +373,14 @@ function playGame() {
 function checkAnswer() {
   // Remove the submit button after it has been clicked
   document.getElementById("submit-answer").style.display = "none";
+  // Display answer count that was hidden in css using display none
   document.getElementById("answer-count").style.display = "block";
   // Stop the draggable elements being draggable
   const draggables = document.getElementsByClassName("draggable");
   for (let draggable in draggables) {
     draggables[draggable].draggable = false;
   }
+
   // Create "Play Again" button
   const againBtn = document.createElement("button");
   againBtn.innerText = "Play Again";
@@ -387,10 +393,12 @@ function checkAnswer() {
   const answerSquares = Array.from(document.querySelectorAll("[id^='1-']"));
   let answers = [];
   let answerIds = [];
-  // Check which answer squares have child node i.e. draggable answers and add those to the answers array
+  // Check which answer squares have a child node i.e. draggable answers and add those to the answers array
   for (let square in answerSquares) {
     if (answerSquares[square].hasChildNodes()) {
       answers.push(answerSquares[square]);
+    } else {
+      continue;
     }
   }
   // Create an array of ids of the dropzone divs that hold an answer
@@ -406,8 +414,8 @@ function checkAnswer() {
   let correctAnswers = document.createElement("span");
   let incorrectAnswers = document.createElement("span");
 
-  // Check which game the player is playing by checking the inner text of the first game square (0-0)
-  /* Assign the value 1 to language variable if the first word is in English (to indicate the answers are in Finnish) 
+  /* Check which game the player is playing by checking the inner text of the first game square (0-0)
+  Assign the value 1 to language variable if the first word is in English (to indicate the answers are in Finnish) 
   and 0 if the first word is in Finnish (answers are in English) */
   const firstGameWord = document.getElementById("0-0").innerText;
   let language;
@@ -424,6 +432,9 @@ function checkAnswer() {
   } else if (firstGameWord === nature[0][1]) {
     language = 0;
     theme = nature;
+  } else {
+    alert(`Unknown game. Reload the page`);
+    throw `Unknown first word: ${firstGameWord}. Aborting!`;
   }
 
   // Check if an ID is in the answerIds array and if so create an answerSquare variable and check if it's inner text matches the correct answer
