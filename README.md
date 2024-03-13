@@ -4,7 +4,7 @@
 
 Vocabulary Booster is an online language-learning game that allows users to improve their Finnish and English vocabulary by playing a fun game.
 
-The purpose of this project is to help those who are learning Finnish or English to increase their vocabulary and encourage others to take up language learning by offering fun, easy and engaging way to start learning a new language.
+The purpose of this project is to help those who are learning Finnish or English to increase their vocabulary and encourage others to take up language learning by offering a fun, easy and engaging way to start learning a new language.
 
 The deployed project can be found here: [Vocabulary Booster](https://jonnlai.github.io/language-game/)
 
@@ -170,13 +170,14 @@ The correct and incorrect answers are counted, and the player is shown a message
 
 1. As a new language learner, I want an easy way to improve my vocabulary.
 
-   - The game allows the user to choose whether they want to translate from Finnish or English, and lets the user to practise as long as needed.
+   - The game allows the user to choose whether they want to translate from Finnish or English, and lets the user to practise as long as needed. The game uses easy and intuitive navigation.
 
 2. As a language learner, I want a fun and engaging way to learn.
 
    - The game is easy to navigate and use, and it has a fun but professional feel to it.
 
 3. As someone who has been learning their target language for some time already, I want to be able to challenge myself.
+
    - The game lets the user select different themes so that they can challenge themselves and continue expanding their vocabulary.
 
 ### Code Validation
@@ -185,7 +186,7 @@ The correct and incorrect answers are counted, and the player is shown a message
 
 - W3C Markup Validator:
 
-  - highlighted that the form element's action attribute was empty. The action attribute was removed to resolve this issue as the form is not being used to send data.
+  - highlighted that the form element's action attribute was empty. The action attribute was removed to resolve this issue as the form is not being used to send data. Even though this solution worked well, it was decided later that it was better to replace the form element with a div element as the use of form element was unnecessary.
   - highlighted several times that the trailing slash on void elements had no effect. However, these were not removed as they had been added by Prettier when the code had been formatted.
     ![W3C Validator error](readme-files/testing/W3C-error.png)
 
@@ -227,7 +228,7 @@ The correct and incorrect answers are counted, and the player is shown a message
 
 #### Common Elements Testing
 
-- Game Instructions
+- **Game Instructions**
 
 | Feature            | Outcome                                                                             | Pass/Fail |
 | ------------------ | ----------------------------------------------------------------------------------- | --------- |
@@ -235,15 +236,15 @@ The correct and incorrect answers are counted, and the player is shown a message
 | Theme dropdown     | Working as expected.                                                                | Pass      |
 | Play button        | Hover effect works as expected. Game starts when the button is clicked as expected. | Pass      |
 
-- Game
+- **Game**
 
-| Feature                      | Outcome                                                                                                                                                                                                                                   | Pass/Fail |
-| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
-| Drag and Drop (mouse)        | Works as expected.                                                                                                                                                                                                                        | Pass      |
-| Tap to select (touch screen) | Functionality works as expected. The selected option's font-weight changes to bold when tapped as expected.                                                                                                                               | Pass      |
-| Tap to "drop" (touch screen) | Works as expected. The selected option's font-weight returns to normal.                                                                                                                                                                   | Pass      |
-| Submit button                | Works as expected. The correct answers are highlighted in green and incorrect ones in red. The answers are counted and displayed. The number of correct answers is hidden when using a device narrower than 350px or lshorter than 600px. | Pass      |
-| Play again button            | Works as expected. Reloads the page to restart the game                                                                                                                                                                                   | Pass      |
+| Feature                      | Outcome                                                                                                                                                                                                                                                                 | Pass/Fail |
+| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| Drag and Drop (mouse)        | Works as expected.                                                                                                                                                                                                                                                      | Pass      |
+| Tap to select (touch screen) | Functionality works as expected. The selected option's font-weight changes to bold when tapped as expected.                                                                                                                                                             | Pass      |
+| Tap to "drop" (touch screen) | Works as expected. The selected option's font-weight returns to normal.                                                                                                                                                                                                 | Pass      |
+| Submit button                | Works as expected. The correct answers are highlighted in green and incorrect ones in red. <br> The number of correct and incorrect answers are displayed. <br> The number of correct answers is hidden when using a device narrower than 350px or lshorter than 600px. | Pass      |
+| Play again button            | Works as expected. Reloads the page to restart the game                                                                                                                                                                                                                 | Pass      |
 
 ### Performance and Accessibility
 
@@ -336,7 +337,7 @@ All the content was written by the developer.
 #### Images
 
 - The notebook background: A photo by [Kamran Aydinov](https://www.freepik.com/free-photo/top-view-open-notepad_17020858.htm#query=notebook%20background&position=8&from_view=keyword&track=ais&uuid=7587716c-ed8d-47e3-9fe9-b9e3795a024b) on [Freepik](https://www.freepik.com/)
-  - Modified by the developer's partner to remove the background and to create a longer and narrower version of the image. (As permitted by Freepik's free license terms)
+  - Modified by the developer's partner to remove the background colour and to create a longer and narrower version of the image. (As permitted by Freepik's free license terms)
 - The library background: Image by [StockSnap](https://pixabay.com/users/stocksnap-894430/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2596809) from [Pixabay](https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2596809)
 
 #### Icons
@@ -356,8 +357,10 @@ All the content was written by the developer.
 
 - The idea to use a for loop to create a grid and how to use drag and drop event listeners were taken from [Slide-Puzzle](https://github.com/ImKennyYip/slide-puzzle/blob/master/puzzle.js)
 - The following resources were also consulted to create the drag and drop event listeners:
+
   - [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/drag_event)
   - [Darwin Tech JavaScript Drag and Drop Youtube tutorial](https://www.youtube.com/watch?v=_G8G1OrEOrI)
+
 - The following resources were consulted to create the touch events:
 
   - [Web Dev Simplified- Learn Javascript Touch Events in 17 Minutes](https://www.youtube.com/watch?v=TaPdgj8mucI)
